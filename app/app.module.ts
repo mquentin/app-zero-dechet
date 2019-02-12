@@ -3,12 +3,20 @@ import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
+import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { setStatusBarColors, BackendService, LoginService } from "./shared";
 
 import { LoginModule } from "./login/login.module";
 import { GroceriesModule } from "./groceries/groceries.module";
+import { HomeModule } from "./home/home.module";
+import { BrowseModule } from "./browse/browse.module";
+import { SearchModule } from "./search/search.module";
+import { FeaturedModule } from "./featured/featured.module";
+import { SettingsModule } from "./settings/settings.module";
 
 setStatusBarColors();
 
@@ -25,6 +33,13 @@ setStatusBarColors();
     NativeScriptRouterModule.forRoot(appRoutes),
     LoginModule,
     GroceriesModule,
+    HomeModule,
+    BrowseModule,
+    SearchModule,
+    FeaturedModule,
+    SettingsModule,
+    NativeScriptUISideDrawerModule,
+    NativeScriptUIListViewModule
   ],
   declarations: [
       AppComponent,
