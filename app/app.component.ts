@@ -7,7 +7,7 @@ import * as app from "tns-core-modules/application";
 
 @Component({
     moduleId: module.id,
-    selector: "ns-app",
+    selector: "gr-app",
     templateUrl: "app.component.html"
 })
 export class AppComponent implements OnInit {
