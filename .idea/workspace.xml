@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcf541d5-5e03-4ac4-950d-313a44df5a11" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/_app-common.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/_app-variables.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/app.android.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/app.android.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/app.ios.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/app.ios.scss" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CODE_OF_CONDUCT.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" afterPath="$PROJECT_DIR$/app/App_Resources/Android/app.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/app.component.ts" afterPath="$PROJECT_DIR$/app/app.component.ts" />
-      <change beforePath="$PROJECT_DIR$/app/app.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/app.routing.ts" afterPath="$PROJECT_DIR$/app/app.routing.ts" />
       <change beforePath="$PROJECT_DIR$/app/groceries/groceries.component.html" afterPath="$PROJECT_DIR$/app/groceries/groceries.component.html" />
-      <change beforePath="$PROJECT_DIR$/app/platform.android.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/platform.ios.css" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="groceries.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="groceries.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/groceries/groceries.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="690">
+              <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -44,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="69" />
+              <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -122,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="groceries-common.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="groceries-common.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/groceries/groceries-common.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1186">
@@ -177,10 +163,10 @@
         <option value="$PROJECT_DIR$/app/app.css" />
         <option value="$PROJECT_DIR$/app/app.android.scss" />
         <option value="$PROJECT_DIR$/app/app.ios.scss" />
-        <option value="$PROJECT_DIR$/app/groceries/groceries.component.html" />
         <option value="$PROJECT_DIR$/app/_app-common.scss" />
         <option value="$PROJECT_DIR$/app/app.component.ts" />
         <option value="$PROJECT_DIR$/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/app/groceries/groceries.component.html" />
       </list>
     </option>
   </component>
@@ -321,12 +307,12 @@
       <option name="presentableId" value="Default" />
       <updated>1549963962180</updated>
       <workItem from="1549963969393" duration="737000" />
-      <workItem from="1549964767999" duration="10413000" />
+      <workItem from="1549964767999" duration="11020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11150000" />
+    <option name="totallyTimeSpent" value="11757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3224" height="1754" extended-state="6" />
@@ -681,22 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/groceries/groceries.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.android.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -759,6 +729,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1186">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/groceries/groceries.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding />
         </state>
       </provider>
