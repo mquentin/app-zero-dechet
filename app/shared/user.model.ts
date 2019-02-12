@@ -1,9 +1,8 @@
-const validator = require("email-validator");
-
 export class User {
   email: string;
   password: string;
   isValidEmail() {
-    return validator.validate(this.email);
+    const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return emailRegex.test(this.email);
   }
 }

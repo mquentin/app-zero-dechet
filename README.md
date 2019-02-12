@@ -1,21 +1,6 @@
 # app-eco-lyon
 app-eco-lyon
 
-- link the device through USB
-
-- list the list of available device (including the connected one):
-	tns device android
-
-- install the IOS / android platforms
-    tns install
-
-- Build the first time
-    tns build Android --bundle
-
-- run nativescript:
-	tns run android
-
-
 <h2 id="development">Development</h2>
 
 This app is built with the NativeScript CLI. Once you have the [CLI installed](https://docs.nativescript.org/start/quick-setup), start by cloning the repo:
@@ -36,6 +21,23 @@ And the same command to run Groceries on Android:
 ```
 $ tns run android
 ```
+
+<h3 id="device">Run on android device</h3>
+
+- link the device through USB
+
+- list the list of available device (including the connected one):
+	tns device android
+
+- install the IOS / android platforms
+    tns install
+
+- Build the first time
+    tns build Android --bundle
+
+- run nativescript:
+	tns run android
+
 
 <h3 id="linting">Linting</h3>
 
