@@ -12,7 +12,7 @@
         "--sauceLab",
         "-v",
         "--appPath",
-        "sampleGroceries.apk",
+        "ecoLyon.apk",
         "--timeout",
         "999999",
         "-u",

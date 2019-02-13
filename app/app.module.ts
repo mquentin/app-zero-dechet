@@ -11,7 +11,6 @@ import { AppComponent } from "./app.component";
 import { setStatusBarColors, BackendService, LoginService } from "./shared";
 
 import { LoginModule } from "./login/login.module";
-import { GroceriesModule } from "./groceries/groceries.module";
 import { HomeModule } from "./home/home.module";
 import { BrowseModule } from "./browse/browse.module";
 import { SearchModule } from "./search/search.module";
@@ -32,7 +31,6 @@ setStatusBarColors();
     NativeScriptRouterModule,
     NativeScriptRouterModule.forRoot(appRoutes),
     LoginModule,
-    GroceriesModule,
     HomeModule,
     BrowseModule,
     SearchModule,
