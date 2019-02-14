@@ -25,8 +25,4 @@ export class HomeComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 
-    logoff() {
-        this.loginService.logoff();
-        this.router.navigate(["/login"]);
-    }
 }

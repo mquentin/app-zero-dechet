@@ -38,6 +38,9 @@ $ tns run android
 - run nativescript:
 	tns run android
 
+- run and debug:
+    tns debug android
+
 
 <h3 id="linting">Linting</h3>
 

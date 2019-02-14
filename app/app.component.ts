@@ -5,6 +5,8 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nat
 import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
 
+import { LoginService } from "./shared";
+
 @Component({
     moduleId: module.id,
     selector: "gr-app",
@@ -14,7 +16,7 @@ export class AppComponent implements OnInit {
     private _activatedUrl: string;
     private _sideDrawerTransition: DrawerTransitionBase;
 
-    constructor(private router: Router, private routerExtensions: RouterExtensions) {
+    constructor(private router: Router, private routerExtensions: RouterExtensions, private loginService: LoginService) {
         // Use the component constructor to inject services.
     }
 
@@ -44,5 +46,12 @@ export class AppComponent implements OnInit {
 
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.closeDrawer();
+    }
+
+    logoff() {
+        this.loginService.logoff();
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.closeDrawer();
+        this.router.navigate(["/login"]);
     }
 }
