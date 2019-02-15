@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
@@ -9,7 +9,7 @@ import { MapboxViewApi } from "nativescript-mapbox";
     moduleId: module.id,
     templateUrl: "./search.component.html"
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
 
     private map: MapboxViewApi;
 
@@ -19,6 +19,16 @@ export class SearchComponent implements OnInit {
 
     ngOnInit(): void {
         // Init your component properties here.
+    }
+
+    ngOnDestroy(): void {
+        // Init your component properties here.
+        this.destroyMapBox();
+    }
+
+    destroyMapBox(): void {
+        console.log("destroyMapBox()");
+        this.map.destroy();
     }
 
     onDrawerButtonTap(): void {
@@ -48,7 +58,6 @@ export class SearchComponent implements OnInit {
                     lng: 5.3974241,
                     title: "Eddy's home",
                     subtitle: "Tap to show directions (with waypoints)",
-                    iconPath: "images/mapmarkers/home_marker.png",
                     onTap: () => console.log("Eddy's home was tapped"),
                     onCalloutTap: () => {
                         console.log("Eddy's home was tapped onCalloutTap");
@@ -58,7 +67,6 @@ export class SearchComponent implements OnInit {
                     id: 4,
                     lat: 43.421834,
                     lng: 24.086096,
-                    icon: "res://truck1",
                     title: "Dangerous truckdriver",
                     subtitle: "Tap to show directions",
                     onTap: () => {
