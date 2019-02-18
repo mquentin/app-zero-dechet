@@ -7,11 +7,12 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
 import { registerElement } from "nativescript-angular/element-registry";
+
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
 
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
-import { setStatusBarColors, BackendService, LoginService } from "./shared";
+import { setStatusBarColors, BackendService, LoginService, MarkerService } from "./shared";
 
 import { LoginModule } from "./login/login.module";
 import { HomeModule } from "./home/home.module";
@@ -23,29 +24,31 @@ import { SettingsModule } from "./settings/settings.module";
 setStatusBarColors();
 
 @NgModule({
-  providers: [
-    BackendService,
-    LoginService,
-    authProviders
-  ],
-  imports: [
-    NativeScriptModule,
-    NativeScriptHttpClientModule,
-    NativeScriptRouterModule,
-    NativeScriptRouterModule.forRoot(appRoutes),
-    LoginModule,
-    HomeModule,
-    BrowseModule,
-    SearchModule,
-    FeaturedModule,
-    SettingsModule,
-    NativeScriptUISideDrawerModule,
-    NativeScriptUIListViewModule
-  ],
-  declarations: [
-      AppComponent,
-  ],
-  bootstrap: [AppComponent],
-  schemas: [NO_ERRORS_SCHEMA]
+    providers: [
+        BackendService,
+        LoginService,
+        MarkerService,
+        authProviders
+    ],
+    imports: [
+        NativeScriptModule,
+        NativeScriptHttpClientModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(appRoutes),
+        LoginModule,
+        HomeModule,
+        BrowseModule,
+        SearchModule,
+        FeaturedModule,
+        SettingsModule,
+        NativeScriptUISideDrawerModule,
+        NativeScriptUIListViewModule
+    ],
+    declarations: [
+        AppComponent,
+    ],
+    bootstrap: [AppComponent],
+    schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+}
