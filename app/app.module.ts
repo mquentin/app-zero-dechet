@@ -9,6 +9,7 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { registerElement } from "nativescript-angular/element-registry";
 
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
+registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";

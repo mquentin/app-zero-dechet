@@ -87,4 +87,8 @@ export class MarkerService {
             }
         ];
     }
+
+    createMarker(marker: GeoJson): void {
+
+    }
 }

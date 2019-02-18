@@ -1,0 +1,22 @@
+ActionBar, .pageWrapper {
+
+}
+
+.map-page-wrapper {
+    height: 100%;
+}
+
+.map-wrapper {
+    border-radius: 20;
+    border-color: white;
+    border-width: 1;
+}
+
+.fab {
+    height: 54;
+    width: 54;
+    margin: 28;
+    background-color: #f7797d;
+    horizontal-align: right;
+    vertical-align: bottom;
+}

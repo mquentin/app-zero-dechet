@@ -10,24 +10,33 @@
     because its function is to always navigate back in the application.
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+                ios.position="left">
     </ActionItem>
     <Label class="action-bar-title" text="Search"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <Mapbox
-            accessToken="pk.eyJ1IjoibWF4bGFtZW5hY2UiLCJhIjoiY2pydzI1bGVzMDdrczRhbjF6djIwOHQ3MSJ9.WGPs_g6sogAywim3Cqc0kQ"
-            mapStyle="traffic_day"
-            latitude="45.7578"
-            longitude="4.8325"
-            hideCompass="true"
-            zoomLevel="12"
-            showUserLocation="false"
-            disableZoom="false"
-            disableRotation="true"
-            disableScroll="false"
-            disableTilt="false"
-            (mapReady)="onMapReady($event)">
-    </Mapbox>
+    <StackLayout class="map-page-wrapper" [class.p-20]="isIOS">
+        <ContentView height="100%" width="100%" [class.map-wrapper]="isIOS">
+            <Mapbox accessToken="pk.eyJ1IjoibWF4bGFtZW5hY2UiLCJhIjoiY2pydzI1bGVzMDdrczRhbjF6djIwOHQ3MSJ9.WGPs_g6sogAywim3Cqc0kQ"
+                    mapStyle="traffic_day"
+                    latitude="45.7578"
+                    longitude="4.8325"
+                    hideCompass="true"
+                    zoomLevel="12"
+                    showUserLocation="false"
+                    disableZoom="false"
+                    disableRotation="true"
+                    disableScroll="false"
+                    disableTilt="false"
+                    (mapReady)="onMapReady($event)">
+            </Mapbox>
+        </ContentView>
+    </StackLayout>
+
+    <FAB (tap)="addMarker()"
+         icon="res://add"
+         rippleColor="#f1f1f1"
+         class="fab">
+    </FAB>
 </GridLayout>
