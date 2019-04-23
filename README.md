@@ -40,6 +40,21 @@ $ tns run android
 
 - run and debug:
     tns debug android
+    
+<h3 id="linting">Run on android for production</h3>
+
+
+    1) Install webpack.   
+    npm install --save-dev nativescript-dev-webpack
+    
+    2) Install webpack’s dependencies.   
+    npm install
+    
+    3) Run on iOS with webpack, UglifyJS, and Angular Ahead-of-Time enabled.   
+    tns run ios --bundle --env.uglify --env.aot 
+    
+    4) Run on Android with webpack, UglifyJS, Angular Ahead-of-Time (if using Angular), and V8 heap snapshot builds enabled.   
+    tns run android --bundle --env.uglify --env.aot --env.snapshot
 
 
 <h3 id="linting">Linting</h3>
@@ -62,9 +77,3 @@ $ tns test ios --emulator
 ```
 $ tns test android --emulator
 ```
-
-For more information on unit testing NativeScript apps, refer to the [NativeScript docs on the topic](http://docs.nativescript.org/core-concepts/testing).
-
-<h3 id="travis">Travis CI</h3>
-
-ecoLyon uses [Travis CI](https://travis-ci.org/) to verify all tests pass on each commit. Refer to the [`.travis.yml` configuration file](https://github.com/NativeScript/sample-Groceries/blob/release/.travis.yml) for details.
