@@ -18,4 +18,26 @@
 <GridLayout class="page page-content">
     <Label class="page-icon fa" text="&#xf1ea;"></Label>
     <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+
+
+    <ListView
+            [row]="2"
+            [class.visible]="listLoaded"
+            [items]="store.items | async">
+        <ng-template let-item="item">
+            <GridLayout
+                    columns="*, auto"
+                    class="container"
+                    [opacity]="item.done ? '0.8' : '1'">
+                <!-- Wrap in containers for bigger tap targets -->
+                <StackLayout
+                        col="0"
+                        orientation="horizontal"
+                        class="tap-target">
+                    <Label [text]="item.name"></Label>
+                </StackLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+
 </GridLayout>

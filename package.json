@@ -59,7 +59,7 @@
     "nativescript-ui-sidedrawer": "~5.1.0",
     "nativescript-unit-test-runner": "^0.3.3",
     "reflect-metadata": "~0.1.8",
-    "rxjs": "^6.3.3",
+    "rxjs": "^6.5.2",
     "tns-core-modules": "^5.4.2",
     "zone.js": "^0.8.4"
   },
