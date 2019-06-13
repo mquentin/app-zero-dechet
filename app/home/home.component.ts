@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
-import { LoginService } from "../shared";
+import { LoginService } from "../shared/login.service";
 
 @Component({
     selector: "Home",

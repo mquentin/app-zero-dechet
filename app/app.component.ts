@@ -5,7 +5,7 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from "nat
 import { filter } from "rxjs/operators";
 import * as app from "tns-core-modules/application";
 
-import { LoginService } from "./shared";
+import { LoginService } from "./shared/login.service";
 
 @Component({
     moduleId: module.id,

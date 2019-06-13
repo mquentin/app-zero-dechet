@@ -1,23 +1,12 @@
 import { Injectable } from "@angular/core";
-import { getString, setString } from "application-settings";
+import { UserService } from "kinvey-nativescript-sdk/angular";
 
-const tokenKey = "token";
 
+@Injectable()
 export class BackendService {
-  static baseUrl = "https://baas.kinvey.com/";
-  static appKey = "kid_HyHoT_REf";
-  static appUserHeader = "Basic a2lkX0h5SG9UX1JFZjo1MTkxMDJlZWFhMzQ0MzMyODFjN2MyODM3MGQ5OTIzMQ";
-  static apiUrl = "";
+  constructor(private userService: UserService) {}
 
-  static isLoggedIn(): boolean {
-    return !!getString("token");
-  }
-
-  static get token(): string {
-    return getString("token");
-  }
-
-  static set token(theToken: string) {
-    setString("token", theToken);
+  isLoggedIn() {
+    return !!this.userService.getActiveUser();
   }
 }

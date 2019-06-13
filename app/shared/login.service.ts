@@ -1,66 +1,33 @@
 import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { throwError } from "rxjs";
-import { tap, catchError } from "rxjs/operators";
-
+import { UserService, BaseError } from "kinvey-nativescript-sdk/angular";
 import { User } from "./user.model";
-import { BackendService } from "./backend.service";
 
 @Injectable()
 export class LoginService {
-  constructor(private http: HttpClient) { }
+    constructor(private userService: UserService) {}
 
-  register(user: User) {
-    return this.http.post(
-      BackendService.baseUrl + "user/" + BackendService.appKey,
-      JSON.stringify({
-        username: user.email,
-        email: user.email,
-        password: user.password
-      }),
-      { headers: this.getCommonHeaders() }
-    )
-    .pipe(catchError(this.handleErrors));
-  }
+    register(user: User) {
+        return this.userService.signup({ username: user.email, password: user.password })
+            .catch(this.handleErrors);
+    }
 
-  login(user: User) {
-    return this.http.post(
-      BackendService.baseUrl + "user/" + BackendService.appKey + "/login",
-      JSON.stringify({
-        username: user.email,
-        password: user.password
-      }),
-      { headers: this.getCommonHeaders() }
-    )
-    .pipe(
-      tap((data: any) => {
-        BackendService.token = data._kmd.authtoken;
-      }),
-      catchError(this.handleErrors)
-    );
-  }
+    login(user: User) {
+        return this.userService.login(user.email, user.password)
+            .catch(this.handleErrors);
+    }
 
-  logoff() {
-    BackendService.token = "";
-  }
+    logoff() {
+        return this.userService.logout()
+            .catch(this.handleErrors);
+    }
 
-  resetPassword(email) {
-    return this.http.post(
-      BackendService.baseUrl + "rpc/" + BackendService.appKey + "/" + email + "/user-password-reset-initiate",
-      {},
-      { headers: this.getCommonHeaders() }
-    ).pipe(catchError(this.handleErrors));
-  }
+    resetPassword(email) {
+        return this.userService.resetPassword(email)
+            .catch(this.handleErrors);
+    }
 
-  private getCommonHeaders() {
-    return new HttpHeaders({
-      "Content-Type": "application/json",
-      "Authorization": BackendService.appUserHeader,
-    });
-  }
-
-  private handleErrors(error: HttpErrorResponse) {
-    console.log(JSON.stringify(error));
-    return throwError(error);
-  }
+    handleErrors(error: BaseError) {
+        console.error(error.message);
+        return Promise.reject(error.message);
+    }
 }

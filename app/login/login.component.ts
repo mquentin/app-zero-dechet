@@ -6,8 +6,12 @@ import { Animation } from "ui/animation";
 import { View } from "ui/core/view";
 import { prompt } from "ui/dialogs";
 import { Page } from "ui/page";
+import { RouterExtensions } from "nativescript-angular/router";
 
-import { alert, LoginService, User } from "../shared";
+import { alert } from "../shared";
+
+import { User } from "../shared/user.model";
+import { LoginService } from "../shared/login.service";
 
 @Component({
     selector: "gr-login",
@@ -28,7 +32,8 @@ export class LoginComponent implements OnInit {
     @ViewChild("password", { static: false }) password: ElementRef;
 
     constructor(private router: Router,
-                private userService: LoginService,
+                private loginService: LoginService,
+                private routerExtensions: RouterExtensions,
                 private page: Page) {
         this.user = new User();
         // this.page.className = "login-page";
@@ -69,17 +74,15 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.userService.login(this.user)
-            .subscribe(
-                () => {
-                    this.isAuthenticating = false;
-                    this.router.navigate(["/"]);
-                },
-                (error) => {
-                    alert("Unfortunately we could not find your account.");
-                    this.isAuthenticating = false;
-                }
-            );
+        this.loginService.login(this.user)
+            .then(() => {
+                this.isAuthenticating = false;
+                this.router.navigate(["/home"]);
+            })
+            .catch((error) => {
+                alert("Unfortunately we could not find your account.");
+                this.isAuthenticating = false;
+            });
     }
 
     signUp() {
@@ -88,22 +91,21 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.userService.register(this.user)
-            .subscribe(
-                () => {
-                    alert("Your account was successfully created.");
-                    this.isAuthenticating = false;
-                    this.toggleDisplay();
-                },
-                (errorDetails) => {
-                    if (errorDetails.error && errorDetails.error.error === "UserAlreadyExists") {
-                        alert("This email address is already in use.");
-                    } else {
-                        alert("Unfortunately we were unable to create your account.");
-                    }
-                    this.isAuthenticating = false;
+        this.loginService.register(this.user)
+            .then(() => {
+                alert("Your account was successfully created.");
+                this.isAuthenticating = false;
+                this.toggleDisplay();
+            })
+            .catch((error) => {
+                const msg = typeof error === "string" ? error : error.message;
+                if (msg.match(/same user/)) {
+                    alert("This email address is already in use.");
+                } else {
+                    alert("Unfortunately we were unable to create your account.");
                 }
-            );
+                this.isAuthenticating = false;
+            });
     }
 
     forgotPassword() {
@@ -115,7 +117,7 @@ export class LoginComponent implements OnInit {
             cancelButtonText: "Cancel"
         }).then((data) => {
             if (data.result) {
-                this.userService.resetPassword(data.text.trim())
+                this.loginService.resetPassword(data.text.trim())
                     .subscribe(() => {
                         alert("Your password was successfully reset. Please check your email for instructions on choosing a new password.");
                     }, () => {

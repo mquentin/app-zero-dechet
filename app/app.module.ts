@@ -6,6 +6,8 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
+import { KinveyModule } from "kinvey-nativescript-sdk/angular";
+
 import { registerElement } from "nativescript-angular/element-registry";
 
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
@@ -13,7 +15,11 @@ registerElement("FAB", () => require("nativescript-floatingactionbutton").Fab);
 
 import { authProviders, appRoutes } from "./app.routing";
 import { AppComponent } from "./app.component";
-import { setStatusBarColors, BackendService, LoginService, MarkerService } from "./shared";
+import { setStatusBarColors } from "./shared";
+
+import { LoginService } from "./shared/login.service";
+import { BackendService } from "./shared/backend.service";
+import { MarkerService } from "./shared/marker.service";
 
 import { LoginModule } from "./login/login.module";
 import { HomeModule } from "./home/home.module";
@@ -43,7 +49,11 @@ setStatusBarColors();
         FeaturedModule,
         SettingsModule,
         NativeScriptUISideDrawerModule,
-        NativeScriptUIListViewModule
+        NativeScriptUIListViewModule,
+        KinveyModule.init({
+                "appKey": "kid_Bytb5ETpE",
+                "appSecret": "cb569f8694104f7cbd047d888724cf01"
+            })
     ],
     declarations: [
         AppComponent,
