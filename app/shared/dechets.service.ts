@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
 
-import { DataStoreService, DataStoreType, Query } from "kinvey-nativescript-sdk/angular";
+import { DataStoreService, DataStoreType } from "kinvey-nativescript-sdk/angular";
 import { UserService } from "kinvey-nativescript-sdk/angular";
 import { BackendService } from "./backend.service";
 
@@ -21,19 +21,12 @@ export class DechetsService {
         this.collectionDechets = dataStoreService.collection<Dechet>("dechets", DataStoreType.Auto);
     }
 
-    baseUrl = BackendService.baseUrl + "appdata/" + BackendService.appKey + "/dechets";
+    baseUrl = BackendService.apiUrl + "/dechets";
 
-    private getCommonHeaders() {
-        return new HttpHeaders({
-            "Content-Type": "application/json",
-            "Authorization": BackendService.appUserHeader
-        });
-    }
-
-    //Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/shared/grocery.service.ts
+    // Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/shared/grocery.service.ts
     load() {
         return this.http.get(this.baseUrl, {
-            headers: this.getCommonHeaders()
+            headers: BackendService.getCommonHeaders()
         })
             .pipe(
                 map((data: any[]) => {
@@ -155,8 +148,8 @@ export class DechetsService {
         let newDechet = new Dechet(name, this.userService.getAuthenticatedUserId(), false);
         return this.http.post(
             this.baseUrl,
-            JSON.stringify({ Name: name }),
-            { headers: this.getCommonHeaders() }
+            JSON.stringify({Name: name}),
+            {headers: BackendService.getCommonHeaders()}
         )
             .pipe(
                 map((data: any) => {

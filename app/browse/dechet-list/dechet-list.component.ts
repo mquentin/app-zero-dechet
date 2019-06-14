@@ -27,7 +27,7 @@ export class DechetListComponent {
         this.store = store;
     }
 
-    //Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/grocery-list/grocery-list.component.ts
+    // Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/grocery-list/grocery-list.component.ts
     load() {
         this.loading.next("");
         this.store.load()
