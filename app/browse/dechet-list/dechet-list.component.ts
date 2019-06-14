@@ -2,7 +2,6 @@ import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from 
 import * as utils from "utils/utils";
 
 import { DechetsService } from "../../shared/dechets.service";
-import { Dechet } from "../../shared/dechet.model";
 
 import { alert } from "../../shared";
 
@@ -28,20 +27,19 @@ export class DechetListComponent {
         this.store = store;
     }
 
+    //Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/grocery-list/grocery-list.component.ts
     load() {
-
-        console.log("DechetListComponent load is called");
-
         this.loading.next("");
         this.store.load()
-            .then(() => {
-                this.loaded.next("");
-                this.listLoaded = true;
-                console.log("DechetListComponent is loaded");
-
-            }).catch(() => {
-            alert("An error occurred loading your grocery list.");
-        });
+            .subscribe(
+                () => {
+                    this.loaded.next("");
+                    this.listLoaded = true;
+                },
+                () => {
+                    alert("An error occurred loading your grocery list.");
+                }
+            );
     }
 
     // The following trick makes the background color of each cell

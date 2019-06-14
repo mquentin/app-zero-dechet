@@ -30,42 +30,33 @@ export class DechetsService {
         });
     }
 
+    //Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/shared/grocery.service.ts
     load() {
-        let promise = Promise.resolve();
-        return promise.then(() => {
-            return this.http.get(this.baseUrl, {
-                headers: this.getCommonHeaders()
-            });
-        }).then((data) => {
-            console.log("DechetsService", data);
-
-            this.allItems = [];
-            data.forEach((dataDechet: Dechet) => {
-
-                console.log("DechetsService data.forEach", dataDechet);
-
-
-                this.allItems.push(
-                    new Dechet(
-                        dataDechet.nom,
-                        dataDechet.auteur,
-                        dataDechet.cvalideParAdmin,
-                        dataDechet._id,
-                        dataDechet.rechercheValorisation,
-                        dataDechet.astuce,
-                        dataDechet.solutionOuverte,
-                        dataDechet.solutionConsigne,
-                        dataDechet.solutionValorisation,
-                        dataDechet.solutionRecyclage,
-                        dataDechet.solutionVrac
-                    )
-                );
-                this.publishUpdates();
-            });
-        }).catch((error) => {
-            console.log("DechetsService load error", error);
-            this.handleErrors(error);
-        });
+        return this.http.get(this.baseUrl, {
+            headers: this.getCommonHeaders()
+        })
+            .pipe(
+                map((data: any[]) => {
+                    this.allItems = data
+                        .map(
+                            (dataDechet: Dechet) => new Dechet(
+                                dataDechet.nom,
+                                dataDechet.auteur,
+                                dataDechet.cvalideParAdmin,
+                                dataDechet._id,
+                                dataDechet.rechercheValorisation,
+                                dataDechet.astuce,
+                                dataDechet.solutionOuverte,
+                                dataDechet.solutionConsigne,
+                                dataDechet.solutionValorisation,
+                                dataDechet.solutionRecyclage,
+                                dataDechet.solutionVrac
+                            )
+                        );
+                    this.publishUpdates();
+                }),
+                catchError(this.handleErrors)
+            );
 
         /*return this.http.get(this.baseUrl, {
             headers: this.getCommonHeaders()
@@ -162,12 +153,18 @@ export class DechetsService {
 
     add(name: string) {
         let newDechet = new Dechet(name, this.userService.getAuthenticatedUserId(), false);
-        return this.collectionDechets.save({name: name})
-            .then((data) => {
-                this.allItems.unshift(newDechet);
-                this.publishUpdates();
-            })
-            .catch(this.handleErrors);
+        return this.http.post(
+            this.baseUrl,
+            JSON.stringify({ Name: name }),
+            { headers: this.getCommonHeaders() }
+        )
+            .pipe(
+                map((data: any) => {
+                    this.allItems.unshift(newDechet);
+                    this.publishUpdates();
+                }),
+                catchError(this.handleErrors)
+            );
     }
 
     private publishUpdates() {
