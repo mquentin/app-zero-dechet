@@ -21,7 +21,7 @@ export class DechetsService {
         this.collectionDechets = dataStoreService.collection<Dechet>("dechets", DataStoreType.Auto);
     }
 
-    baseUrl = BackendService.apiUrl + "/dechets";
+    baseUrl = BackendService.apiUrl + "/dechets?query={\"valideParAdmin\":1}";
 
     // Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/shared/grocery.service.ts
     load() {
@@ -50,35 +50,6 @@ export class DechetsService {
                 }),
                 catchError(this.handleErrors)
             );
-
-        /*return this.http.get(this.baseUrl, {
-            headers: this.getCommonHeaders()
-        })
-            .pipe(
-                map((data: any[]) => {
-                    this.allItems = [];
-                    data.forEach((dataDechet) => {
-                        this.allItems.push(
-                            new Dechet(
-                                dataDechet.nom,
-                                dataDechet.auteur,
-                                dataDechet.cvalideParAdmin,
-                                dataDechet._id,
-                                dataDechet.rechercheValorisation,
-                                dataDechet.astuce,
-                                dataDechet.solutionOuverte,
-                                dataDechet.solutionConsigne,
-                                dataDechet.solutionValorisation,
-                                dataDechet.solutionRecyclage,
-                                dataDechet.solutionVrac
-                            )
-                        );
-                        this.publishUpdates();
-                    }),
-                    catchError(this.handleErrors);
-
-                })
-                );*/
 
         /*const query = new Query();
         query.equalTo("valideParAdmin", 1);
