@@ -41,6 +41,10 @@ $ tns run android
 - run and debug:
     tns debug android
     
+<h3 id="update">Update the app - nativescript, npm packages, platform...</h3>
+    
+[Update instructions](https://docs.nativescript.org/releases/upgrade-instructions)
+    
 <h3 id="linting">Run on android for production</h3>
 
 

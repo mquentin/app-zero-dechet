@@ -1,13 +1,13 @@
 export class Dechet {
     _id: string;
     nom: string;
-    rechercheValorisation: string[];
-    astuce: string[];
-    solutionOuverte: string[];
-    solutionConsigne: string[];
-    solutionValorisation: string[];
-    solutionRecyclage: string[];
-    solutionVrac: string[];
+    rechercheValorisation: any[];
+    astuce: any[];
+    solutionOuverte: any[];
+    solutionConsigne: any[];
+    solutionValorisation: any[];
+    solutionRecyclage: any[];
+    solutionVrac: any[];
     valideParAdmin: boolean;
     auteur: string;
     dateDeCreation: Date;

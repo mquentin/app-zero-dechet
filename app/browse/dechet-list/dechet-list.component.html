@@ -1,0 +1,22 @@
+<h1>Dechet List is loaded</h1>
+<ListView
+        [row]="row"
+        [class.visible]="listLoaded"
+        [items]="store.items | async"
+        (itemLoading)="makeBackgroundTransparent($event)" (loaded)="load()">
+    <ng-template let-item="item">
+        <GridLayout
+                columns="*, auto"
+                class="container"
+                [opacity]="item.done ? '0.8' : '1'">
+            <!-- Wrap in containers for bigger tap targets -->
+            <StackLayout
+                    col="0"
+                    orientation="horizontal"
+                    class="tap-target">
+                <Label
+                        [text]="item.nom"></Label>
+            </StackLayout>
+        </GridLayout>
+    </ng-template>
+</ListView>

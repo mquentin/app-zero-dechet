@@ -4,6 +4,8 @@ import * as app from "tns-core-modules/application";
 
 import { DechetsService } from "../shared/dechets.service";
 
+import { DechetListComponent } from "./dechet-list/dechet-list.component";
+
 @Component({
     selector: "Browse",
     moduleId: module.id,
@@ -12,22 +14,11 @@ import { DechetsService } from "../shared/dechets.service";
 })
 export class BrowseComponent implements OnInit {
     isLoading = false;
-    listLoaded = false;
 
     constructor(private store: DechetsService) {
-        this.isLoading = true;
-        this.store.load()
-            .then(() => {
-                this.isLoading = false;
-                this.listLoaded = true;
-
-            }).catch(() => {
-            alert("An error occurred loading your grocery list.");
-        });
     }
 
     ngOnInit(): void {
-
     }
 
     onDrawerButtonTap(): void {
@@ -35,8 +26,12 @@ export class BrowseComponent implements OnInit {
         sideDrawer.showDrawer();
     }
 
-    load() {
+    showActivityIndicator() {
+        this.isLoading = true;
+    }
 
+    hideActivityIndicator() {
+        this.isLoading = false;
     }
 
 }

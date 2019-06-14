@@ -1,0 +1,57 @@
+import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from "@angular/core";
+import * as utils from "utils/utils";
+
+import { DechetsService } from "../../shared/dechets.service";
+import { Dechet } from "../../shared/dechet.model";
+
+import { alert } from "../../shared";
+
+declare var UIColor: any;
+
+@Component({
+    selector: "gr-dechet-list",
+    moduleId: module.id,
+    templateUrl: "./dechet-list.component.html",
+    styleUrls: ["./dechet-list.component.css"],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class DechetListComponent {
+    @Input() showDeleted: boolean;
+    @Input() row;
+    @Output() loading = new EventEmitter();
+    @Output() loaded = new EventEmitter();
+
+    public store: DechetsService;
+    listLoaded = false;
+
+    constructor(store: DechetsService) {
+        this.store = store;
+    }
+
+    load() {
+
+        console.log("DechetListComponent load is called");
+
+        this.loading.next("");
+        this.store.load()
+            .then(() => {
+                this.loaded.next("");
+                this.listLoaded = true;
+                console.log("DechetListComponent is loaded");
+
+            }).catch(() => {
+            alert("An error occurred loading your grocery list.");
+        });
+    }
+
+    // The following trick makes the background color of each cell
+    // in the UITableView transparent as it’s created.
+    makeBackgroundTransparent(args) {
+        let cell = args.ios;
+        if (cell) {
+            // support XCode 8
+            cell.backgroundColor = utils.ios.getter(UIColor, UIColor.clearColor);
+        }
+    }
+}
+

@@ -1,10 +1,12 @@
 import { Injectable, NgZone } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { BehaviorSubject } from "rxjs";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable, BehaviorSubject } from "rxjs";
 
-import { DataStoreService, DataStoreType } from "kinvey-nativescript-sdk/angular";
+import { DataStoreService, DataStoreType, Query } from "kinvey-nativescript-sdk/angular";
 import { UserService } from "kinvey-nativescript-sdk/angular";
+import { BackendService } from "./backend.service";
+
+import { map, catchError } from "rxjs/operators";
 
 import { Dechet } from "./dechet.model";
 
@@ -13,16 +15,125 @@ export class DechetsService {
     items: BehaviorSubject<Array<Dechet>> = new BehaviorSubject<Array<Dechet>>([]);
 
     private allItems: Array<Dechet> = [];
-    private datastore = this.dataStoreService.collection<Dechet>("dechets", DataStoreType.Auto);
+    collectionDechets: any;
 
-    constructor(private zone: NgZone, private http: HttpClient, private dataStoreService: DataStoreService, private userService: UserService) { }
+    constructor(private zone: NgZone, private http: HttpClient, private dataStoreService: DataStoreService, private userService: UserService) {
+        this.collectionDechets = dataStoreService.collection<Dechet>("dechets", DataStoreType.Auto);
+    }
+
+    baseUrl = BackendService.baseUrl + "appdata/" + BackendService.appKey + "/dechets";
+
+    private getCommonHeaders() {
+        return new HttpHeaders({
+            "Content-Type": "application/json",
+            "Authorization": BackendService.appUserHeader
+        });
+    }
 
     load() {
         let promise = Promise.resolve();
         return promise.then(() => {
-            let stream = this.datastore.find();
+            return this.http.get(this.baseUrl, {
+                headers: this.getCommonHeaders()
+            });
+        }).then((data) => {
+            console.log("DechetsService", data);
+
+            this.allItems = [];
+            data.forEach((dataDechet: Dechet) => {
+
+                console.log("DechetsService data.forEach", dataDechet);
+
+
+                this.allItems.push(
+                    new Dechet(
+                        dataDechet.nom,
+                        dataDechet.auteur,
+                        dataDechet.cvalideParAdmin,
+                        dataDechet._id,
+                        dataDechet.rechercheValorisation,
+                        dataDechet.astuce,
+                        dataDechet.solutionOuverte,
+                        dataDechet.solutionConsigne,
+                        dataDechet.solutionValorisation,
+                        dataDechet.solutionRecyclage,
+                        dataDechet.solutionVrac
+                    )
+                );
+                this.publishUpdates();
+            });
+        }).catch((error) => {
+            console.log("DechetsService load error", error);
+            this.handleErrors(error);
+        });
+
+        /*return this.http.get(this.baseUrl, {
+            headers: this.getCommonHeaders()
+        })
+            .pipe(
+                map((data: any[]) => {
+                    this.allItems = [];
+                    data.forEach((dataDechet) => {
+                        this.allItems.push(
+                            new Dechet(
+                                dataDechet.nom,
+                                dataDechet.auteur,
+                                dataDechet.cvalideParAdmin,
+                                dataDechet._id,
+                                dataDechet.rechercheValorisation,
+                                dataDechet.astuce,
+                                dataDechet.solutionOuverte,
+                                dataDechet.solutionConsigne,
+                                dataDechet.solutionValorisation,
+                                dataDechet.solutionRecyclage,
+                                dataDechet.solutionVrac
+                            )
+                        );
+                        this.publishUpdates();
+                    }),
+                    catchError(this.handleErrors);
+
+                })
+                );*/
+
+        /*const query = new Query();
+        query.equalTo("valideParAdmin", 1);
+        this.collectionDechets.find().subscribe((data) => {
+                console.log("DechetsService", data);
+
+                this.allItems = [];
+                data.forEach((dataDechet) => {
+                    this.allItems.push(
+                        new Dechet(
+                            dataDechet.nom,
+                            dataDechet.auteur,
+                            dataDechet.cvalideParAdmin,
+                            dataDechet._id,
+                            dataDechet.rechercheValorisation,
+                            dataDechet.astuce,
+                            dataDechet.solutionOuverte,
+                            dataDechet.solutionConsigne,
+                            dataDechet.solutionValorisation,
+                            dataDechet.solutionRecyclage,
+                            dataDechet.solutionVrac
+                        )
+                    );
+                    this.publishUpdates();
+                });
+            }, (error) => {
+                console.log("DechetsService load error", error);
+                this.handleErrors;
+            });*/
+
+        /*let promise = Promise.resolve();
+        return promise.then(() => {
+            const query = new Query();
+            query.equalTo("valideParAdmin", 1);
+            let stream = this.collectionDechets.find(query);
             return stream.toPromise();
         }).then((data) => {
+
+            console.log("DechetsService", data);
 
             this.allItems = [];
             data.forEach((dataDechet) => {
@@ -44,13 +155,14 @@ export class DechetsService {
                 this.publishUpdates();
             });
         }).catch((error) => {
-            this.handleErrors;
-        });
+            console.log("DechetsService load error", error);
+            this.handleErrors(error);
+        });*/
     }
 
     add(name: string) {
         let newDechet = new Dechet(name, this.userService.getAuthenticatedUserId(), false);
-        return this.datastore.save({ name: name })
+        return this.collectionDechets.save({name: name})
             .then((data) => {
                 this.allItems.unshift(newDechet);
                 this.publishUpdates();
@@ -64,8 +176,6 @@ export class DechetsService {
             // must emit a *new* value (immutability!)
             const newVal = [...this.allItems];
             this.items.next(newVal);
-
-            console.log("publishUpdates", this.items);
         });
     }
 

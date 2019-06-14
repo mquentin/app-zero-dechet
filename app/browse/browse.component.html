@@ -10,7 +10,7 @@
     because its function is to always navigate back in the application.
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+                ios.position="left">
     </ActionItem>
     <Label class="action-bar-title" text="Browse"></Label>
 </ActionBar>
@@ -20,24 +20,13 @@
     <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
 
 
-    <ListView
+    <gr-dechet-list
             [row]="2"
-            [class.visible]="listLoaded"
-            [items]="store.items | async">
-        <ng-template let-item="item">
-            <GridLayout
-                    columns="*, auto"
-                    class="container"
-                    [opacity]="item.done ? '0.8' : '1'">
-                <!-- Wrap in containers for bigger tap targets -->
-                <StackLayout
-                        col="0"
-                        orientation="horizontal"
-                        class="tap-target">
-                    <Label [text]="item.name"></Label>
-                </StackLayout>
-            </GridLayout>
-        </ng-template>
-    </ListView>
+            (loading)="showActivityIndicator()"
+            (loaded)="hideActivityIndicator()"></gr-dechet-list>
+
+    <ActivityIndicator
+            [busy]="isLoading"
+            row="2"></ActivityIndicator>
 
 </GridLayout>

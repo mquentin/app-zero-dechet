@@ -9,4 +9,8 @@ export class BackendService {
   isLoggedIn() {
     return !!this.userService.getActiveUser();
   }
+
+  static baseUrl = "https://baas.kinvey.com/";
+  static appKey = "kid_Bytb5ETpE";
+  static appUserHeader = "Basic a2lkX0J5dGI1RVRwRTpjMmRkODc4ZjA2YzQ0MDhkYTcxMzdhMzk1ODYwYmUzNg==";
 }
