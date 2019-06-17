@@ -8,7 +8,7 @@
             <FlexboxLayout flexDirection="row" class="list-group-item">
                 <Image [src]="'res://logo_login'" class="thumb img-circle"></Image>
                 <Label class="list-group-item-heading"
-                       verticalAlignment="center" style="width: 60%" [text]="item.nom"></Label>
+                       verticalAlignment="center" style="width: 60%" [text]="item.nom" (tap)="onNavItemTap('/dechet/' + item._id)"></Label>
             </FlexboxLayout>
         </ng-template>
     </ListView>

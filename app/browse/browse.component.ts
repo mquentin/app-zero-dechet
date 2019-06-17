@@ -4,8 +4,6 @@ import * as app from "tns-core-modules/application";
 
 import { DechetsService } from "../shared/dechets.service";
 
-import { DechetListComponent } from "./dechet-list/dechet-list.component";
-
 @Component({
     selector: "Browse",
     moduleId: module.id,

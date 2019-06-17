@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from "@angular/core";
 import * as utils from "utils/utils";
 
+import { RouterExtensions } from "nativescript-angular/router";
+
 import { DechetsService } from "../../shared/dechets.service";
 
 import { alert } from "../../shared";
@@ -23,7 +25,7 @@ export class DechetListComponent {
     public store: DechetsService;
     listLoaded = false;
 
-    constructor(store: DechetsService) {
+    constructor(store: DechetsService, private routerExtensions: RouterExtensions) {
         this.store = store;
     }
 
@@ -50,6 +52,14 @@ export class DechetListComponent {
             // support XCode 8
             cell.backgroundColor = utils.ios.getter(UIColor, UIColor.clearColor);
         }
+    }
+
+    onNavItemTap(navItemRoute: string): void {
+        this.routerExtensions.navigate([navItemRoute], {
+            transition: {
+                name: "fade"
+            }
+        });
     }
 }
 

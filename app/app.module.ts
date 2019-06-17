@@ -25,7 +25,7 @@ import { LoginModule } from "./login/login.module";
 import { HomeModule } from "./home/home.module";
 import { BrowseModule } from "./browse/browse.module";
 import { SearchModule } from "./search/search.module";
-import { FeaturedModule } from "./featured/featured.module";
+import { DechetModule } from "./dechet/dechet.module";
 import { SettingsModule } from "./settings/settings.module";
 
 setStatusBarColors();
@@ -46,7 +46,7 @@ setStatusBarColors();
         HomeModule,
         BrowseModule,
         SearchModule,
-        FeaturedModule,
+        DechetModule,
         SettingsModule,
         NativeScriptUISideDrawerModule,
         NativeScriptUIListViewModule,

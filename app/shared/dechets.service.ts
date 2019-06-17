@@ -13,19 +13,22 @@ import { Dechet } from "./dechet.model";
 @Injectable()
 export class DechetsService {
     items: BehaviorSubject<Array<Dechet>> = new BehaviorSubject<Array<Dechet>>([]);
+    myItem: BehaviorSubject<Dechet> = new BehaviorSubject<Dechet>(null);
 
     private allItems: Array<Dechet> = [];
+    private oneItem: Dechet;
     collectionDechets: any;
 
     constructor(private zone: NgZone, private http: HttpClient, private dataStoreService: DataStoreService, private userService: UserService) {
         this.collectionDechets = dataStoreService.collection<Dechet>("dechets", DataStoreType.Auto);
     }
 
-    baseUrl = BackendService.apiUrl + "/dechets?query={\"valideParAdmin\":1}";
+    baseUrl = BackendService.apiUrl + "/dechets";
 
     // Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/shared/grocery.service.ts
     load() {
-        return this.http.get(this.baseUrl, {
+        let loadUrl = this.baseUrl + "?query={\"valideParAdmin\":1}";
+        return this.http.get(loadUrl, {
             headers: BackendService.getCommonHeaders()
         })
             .pipe(
@@ -46,7 +49,7 @@ export class DechetsService {
                                 dataDechet.solutionVrac
                             )
                         );
-                    this.publishUpdates();
+                    this.publishLoadUpdates();
                 }),
                 catchError(this.handleErrors)
             );
@@ -73,7 +76,7 @@ export class DechetsService {
                             dataDechet.solutionVrac
                         )
                     );
-                    this.publishUpdates();
+                    this.publishLoadUpdates();
                 });
             }, (error) => {
                 console.log("DechetsService load error", error);
@@ -107,12 +110,38 @@ export class DechetsService {
                         dataDechet.solutionVrac
                     )
                 );
-                this.publishUpdates();
+                this.publishLoadUpdates();
             });
         }).catch((error) => {
             console.log("DechetsService load error", error);
             this.handleErrors(error);
         });*/
+    }
+
+    loadOne(id: string) {
+        let loadOneUrl = this.baseUrl + id;
+        return this.http.get(loadOneUrl, {
+            headers: BackendService.getCommonHeaders()
+        })
+            .pipe(
+                map((dataDechet: Dechet) => {
+                    this.oneItem = new Dechet(
+                        dataDechet.nom,
+                        dataDechet.auteur,
+                        dataDechet.cvalideParAdmin,
+                        dataDechet._id,
+                        dataDechet.rechercheValorisation,
+                        dataDechet.astuce,
+                        dataDechet.solutionOuverte,
+                        dataDechet.solutionConsigne,
+                        dataDechet.solutionValorisation,
+                        dataDechet.solutionRecyclage,
+                        dataDechet.solutionVrac
+                    );
+                    this.publishLoadOneUpdates();
+                }),
+                catchError(this.handleErrors)
+            );
     }
 
     add(name: string) {
@@ -125,18 +154,26 @@ export class DechetsService {
             .pipe(
                 map((data: any) => {
                     this.allItems.unshift(newDechet);
-                    this.publishUpdates();
+                    this.publishLoadUpdates();
                 }),
                 catchError(this.handleErrors)
             );
     }
 
-    private publishUpdates() {
+    private publishLoadUpdates() {
         // Make sure all updates are published inside NgZone so that change detection is triggered if needed
         this.zone.run(() => {
             // must emit a *new* value (immutability!)
             const newVal = [...this.allItems];
             this.items.next(newVal);
+        });
+    }
+
+    private publishLoadOneUpdates() {
+        // Make sure all updates are published inside NgZone so that change detection is triggered if needed
+        this.zone.run(() => {
+            // must emit a *new* value (immutability!)
+            this.myItem.next(this.oneItem);
         });
     }
 
