@@ -34,7 +34,7 @@ TextField {
     .page-icon {
         font-size: 72;
         vertical-align: top;
-        horizontal-align: center;
+        horizontal-align: left;
         color: $page-icon-color;
         margin-top: 20%;
     }
@@ -104,5 +104,22 @@ $sidedrawer-list-icon-size: 20;
                 }
             }
         }
+    }
+}
+
+//Navigation Icon
+$navigation-layout-item-offset-left: 15;
+$navigation-layout-icon-offset: 10;
+$navigation-layout-icon-size: 20;
+
+.navigation-layout {
+    padding-left: $navigation-layout-item-offset-left;
+    Label {
+        vertical-align: center;
+        color: $blue-dark;
+    }
+    .fa {
+        width: $navigation-layout-icon-size;
+        margin-right: $navigation-layout-icon-offset;
     }
 }

@@ -120,7 +120,6 @@ export class DechetsService {
 
     loadOne(id: string) {
         let loadOneUrl = this.baseUrl + "/" + id;
-        console.log("loadOneUrl", loadOneUrl);
         return this.http.get(loadOneUrl, {
             headers: BackendService.getCommonHeaders()
         })

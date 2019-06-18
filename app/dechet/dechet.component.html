@@ -12,17 +12,18 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
                 ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" [text]="'Dechet - ' + dechetId"></Label>
+    <Label class="action-bar-title" text="Déchet"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">
-    <StackLayout orientation="vertical">
-        <Label [text]="(store.myItem | async)?._id"></Label>
-        <Label [text]="(store.myItem | async)?.nom"></Label>
-        <Label [text]="(store.myItem | async)?.dateDeCreation"></Label>
-    </StackLayout>
-    <GridLayout (tap)="goBack()">
+<GridLayout class="page page-content" columns="*" rows="auto, auto">
+    <GridLayout class="navigation-layout" (tap)="goBack()" horizontalAlignment="left" row="0" col="0">
         <Label col="0" text="&#xf104;" class="fa"></Label>
         <Label col="1" text="Back" class="p-r-10"></Label>
     </GridLayout>
+
+    <StackLayout orientation="vertical" row="1" col="0">
+        <Label class="h1" [text]="(store.myItem | async)?.nom" horizontalAlignment="center"></Label>
+        <Label [text]="(store.myItem | async)?._id"></Label>
+        <Label [text]="(store.myItem | async)?.dateDeCreation"></Label>
+    </StackLayout>
 </GridLayout>
