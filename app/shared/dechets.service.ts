@@ -119,12 +119,13 @@ export class DechetsService {
     }
 
     loadOne(id: string) {
-        let loadOneUrl = this.baseUrl + id;
+        let loadOneUrl = this.baseUrl + "/" + id;
+        console.log("loadOneUrl", loadOneUrl);
         return this.http.get(loadOneUrl, {
             headers: BackendService.getCommonHeaders()
         })
             .pipe(
-                map((dataDechet: Dechet) => {
+                map((dataDechet: any) => {
                     this.oneItem = new Dechet(
                         dataDechet.nom,
                         dataDechet.auteur,

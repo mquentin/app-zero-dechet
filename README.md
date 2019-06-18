@@ -42,6 +42,8 @@ $ tns run android
     tns debug android
     
 <h3 id="update">Update the app - nativescript, npm packages, platform...</h3>
+
+Also remove the existing platform before: tns platform remove android
     
 [Update instructions](https://docs.nativescript.org/releases/upgrade-instructions)
     

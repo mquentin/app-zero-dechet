@@ -10,12 +10,19 @@
     because its function is to always navigate back in the application.
     -->
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+                ios.position="left">
     </ActionItem>
     <Label class="action-bar-title" [text]="'Dechet - ' + dechetId"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf005;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+    <StackLayout orientation="vertical">
+        <Label [text]="(store.myItem | async)?._id"></Label>
+        <Label [text]="(store.myItem | async)?.nom"></Label>
+        <Label [text]="(store.myItem | async)?.dateDeCreation"></Label>
+    </StackLayout>
+    <GridLayout (tap)="goBack()">
+        <Label col="0" text="&#xf104;" class="fa"></Label>
+        <Label col="1" text="Back" class="p-r-10"></Label>
+    </GridLayout>
 </GridLayout>

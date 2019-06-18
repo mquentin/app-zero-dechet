@@ -26,7 +26,6 @@ export class DechetComponent implements OnInit {
                 this.store.loadOne(this.dechetId)
                     .subscribe(
                         () => {
-                            console.log("this.store.myItem", this.store.myItem);
                         },
                         () => {
                             alert("An error occurred loading your grocery list.");
