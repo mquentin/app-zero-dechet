@@ -1,10 +1,10 @@
 {
-  "name": "app-eco-lyon",
+  "name": "app-zero-dechet",
   "version": "1.0.0",
   "description": "A NativeScript-built iOS and Android app for managing eco points",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mquentin/app-eco-lyon"
+    "url": "https://github.com/mquentin/app-zero-dechet"
   },
   "keywords": [
     "NativeScript"
@@ -12,9 +12,9 @@
   "author": "Maxime Quentin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mquentin/app-eco-lyon/issues"
+    "url": "https://github.com/mquentin/app-zero-dechet/issues"
   },
-  "homepage": "https://github.com/mquentin/app-eco-lyon",
+  "homepage": "https://github.com/mquentin/app-zero-dechet",
   "nativescript": {
     "id": "org.zeroDechet.app",
     "tns-ios": {

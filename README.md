@@ -1,13 +1,12 @@
-# app-eco-lyon
-app-eco-lyon
+#zeroDechet
 
 <h2 id="development">Development</h2>
 
 This app is built with the NativeScript CLI. Once you have the [CLI installed](https://docs.nativescript.org/start/quick-setup), start by cloning the repo:
 
 ```
-$ git clone https://github.com/mquentin/app-eco-lyon.git
-$ cd app-eco-lyon
+$ git clone https://github.com/mquentin/app-zero-dechet.git
+$ cd app-zero-dechet
 ```
 
 From there you can use the `run` command to run zeroDechet on iOS:
