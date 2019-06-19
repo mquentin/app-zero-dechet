@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/mquentin/app-eco-lyon",
   "nativescript": {
-    "id": "org.ecoLyon.app",
+    "id": "org.zeroDechet.app",
     "tns-ios": {
       "version": "5.4.2"
     },

@@ -10,13 +10,13 @@ $ git clone https://github.com/mquentin/app-eco-lyon.git
 $ cd app-eco-lyon
 ```
 
-From there you can use the `run` command to run ecoLyon on iOS:
+From there you can use the `run` command to run zeroDechet on iOS:
 
 ```
 $ tns run ios
 ```
 
-And the same command to run ecoLyon on Android:
+And the same command to run zeroDechet on Android:
 
 ```
 $ tns run android
@@ -65,7 +65,7 @@ Also remove the existing platform before: tns platform remove android
 
 <h3 id="linting">Linting</h3>
 
-ecoLyon uses [tslint](https://www.npmjs.com/package/tslint) + [codelyzer](https://github.com/mgechev/codelyzer) rules to ensure the code follows the [angular style guide](https://angular.io/docs/ts/latest/guide/style-guide.html).
+zeroDechet uses [tslint](https://www.npmjs.com/package/tslint) + [codelyzer](https://github.com/mgechev/codelyzer) rules to ensure the code follows the [angular style guide](https://angular.io/docs/ts/latest/guide/style-guide.html).
 
 You can run the linter with the `tslint` npm script:
 ```
@@ -74,7 +74,7 @@ $ npm run tslint
 
 <h3 id="unit-testing">Unit Testing</h3>
 
-ecoLyon uses NativeScript’s [integrated unit test runner](http://docs.nativescript.org/core-concepts/testing) with [Jasmine](http://jasmine.github.io/). To run the tests for yourself use the `tns test` command:
+zeroDechet uses NativeScript’s [integrated unit test runner](http://docs.nativescript.org/core-concepts/testing) with [Jasmine](http://jasmine.github.io/). To run the tests for yourself use the `tns test` command:
 
 ```
 $ tns test ios --emulator

@@ -1,16 +1,16 @@
 import { AppiumDriver, createDriver, SearchOptions } from "nativescript-dev-appium";
 import { expect } from "chai";
 
-describe("ecoLyon", async function () {
+describe("zeroDechet", async function () {
     let driver: AppiumDriver;
     const loginButtonText = "Login";
-    const email = "ecoLyon@mailinator.com";
+    const email = "zeroDechet@mailinator.com";
     const password = "123";
     const fruit = "apple";
     const recentButtonText = "Recent";
     const doneButtonText = "Done";
     const logOffButtonText = "Log Off";
-    const invalidEmail = "ecoLyon@mailinator";
+    const invalidEmail = "zeroDechet@mailinator";
     const invalidEmailWarningText = "valid email";
     const okButtonText = "OK";
     const cancelButtonText = "Cancel";
@@ -122,7 +122,7 @@ describe("ecoLyon", async function () {
         expect(appleItem).to.exist;
     });
 
-    it("should delete item from the ecoLyon list and remove it from Recent", async () => {
+    it("should delete item from the zeroDechet list and remove it from Recent", async () => {
         await clickOnBinButton();
         const recentButton = await driver.findElementByText(recentButtonText);
         await recentButton.click();

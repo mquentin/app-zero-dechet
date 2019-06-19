@@ -12,18 +12,45 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
                 ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Déchet"></Label>
+    <Label class="action-bar-title" [text]="(store.myItem | async)?.nom"></Label>
 </ActionBar>
 
 <GridLayout class="page page-content" columns="*" rows="auto, auto">
-    <GridLayout class="navigation-layout" (tap)="goBack()" horizontalAlignment="left" row="0" col="0">
+    <GridLayout columns="auto, *" class="navigation-layout" (tap)="goBack()" horizontalAlignment="left" row="0" col="0">
         <Label col="0" text="&#xf104;" class="fa"></Label>
-        <Label col="1" text="Back" class="p-r-10"></Label>
+        <Label col="1" text="Retour" class="p-r-10"></Label>
     </GridLayout>
 
-    <StackLayout orientation="vertical" row="1" col="0">
-        <Label class="h1" [text]="(store.myItem | async)?.nom" horizontalAlignment="center"></Label>
-        <Label [text]="(store.myItem | async)?._id"></Label>
-        <Label [text]="(store.myItem | async)?.dateDeCreation"></Label>
-    </StackLayout>
+    <ScrollView row="1" col="0">
+        <GridLayout rows="auto, auto, auto">
+            <Image [src]="'res://logo_login'" stretch="aspectFill" height="200" class="m-b-15"></Image>
+
+            <StackLayout row="1" class="hr-light m-t-15 m-b-15"></StackLayout>
+
+            <GridLayout row="2" rows="*,*,*,*,*,*" columns="auto, auto">
+
+                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary"></Label>
+                <Label col="1" class="text p-b-10">
+                    <FormattedString>
+                        <Span [text]="(store.myItem | async)?._id"></Span>
+                    </FormattedString>
+                </Label>
+
+                <Label text="Date de création" class="p-l-15 p-b-10 m-r-20 text-secondary" row="1"></Label>
+                <Label [text]="(store.myItem | async)?.dateDeCreation" row="1" col="1" class="text p-b-10"></Label>
+
+                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="2"></Label>
+                <Label [text]="(store.myItem | async)?._id" row="2" col="1" class="text p-b-10"></Label>
+
+                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
+                <Label [text]="(store.myItem | async)?._id" row="3" col="1" class="text p-b-10"></Label>
+
+                <Label text="id" class="p-l-15 m-r-20 p-b-10 text-secondary" row="4"></Label>
+                <Label [text]="(store.myItem | async)?._id" row="4" col="1" class="text p-b-10"></Label>
+
+                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="5"></Label>
+                <Label [text]="(store.myItem | async)?._id" row="5" col="1" class="text p-b-10"></Label>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
 </GridLayout>

@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 
     login() {
         if (getConnectionType() === connectionType.none) {
-            alert("ecoLyon requires an internet connection to log in.");
+            alert("zeroDechet requires an internet connection to log in.");
             return;
         }
 
@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
 
     signUp() {
         if (getConnectionType() === connectionType.none) {
-            alert("ecoLyon requires an internet connection to register.");
+            alert("zeroDechet requires an internet connection to register.");
             return;
         }
 
@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
     forgotPassword() {
         prompt({
             title: "Forgot Password",
-            message: "Enter the email address you used to register for ecoLyon to reset your password.",
+            message: "Enter the email address you used to register for zeroDechet to reset your password.",
             defaultText: "",
             okButtonText: "Ok",
             cancelButtonText: "Cancel"
