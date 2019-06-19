@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
-import { UserService } from "kinvey-nativescript-sdk/angular";
 import { HttpHeaders } from "@angular/common/http";
+import { Kinvey } from "kinvey-nativescript-sdk";
 
 @Injectable()
 export class BackendService {
-    constructor(private userService: UserService) {
+    constructor() {
     }
 
     isLoggedIn() {
-        return !!this.userService.getActiveUser();
+        return !!Kinvey.User.getActiveUser();
     }
 
     static baseUrl = "https://baas.kinvey.com/";

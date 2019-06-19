@@ -118,7 +118,7 @@ export class LoginComponent implements OnInit {
         }).then((data) => {
             if (data.result) {
                 this.loginService.resetPassword(data.text.trim())
-                    .subscribe(() => {
+                    .then(() => {
                         alert("Your password was successfully reset. Please check your email for instructions on choosing a new password.");
                     }, () => {
                         alert("Unfortunately, an error occurred resetting your password.");

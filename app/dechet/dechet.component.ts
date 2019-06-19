@@ -23,14 +23,12 @@ export class DechetComponent implements OnInit {
             this.dechetId = params["id"];
 
             if (this.dechetId) {
-                this.store.loadOne(this.dechetId)
-                    .subscribe(
-                        () => {
-                        },
-                        () => {
-                            alert("An error occurred loading your grocery list.");
-                        }
-                    );
+                this.store.load(this.dechetId)
+                    .then(() => {
+
+                    }).catch(() => {
+                    alert("An error occurred loading your grocery list.");
+                });
             }
 
         });

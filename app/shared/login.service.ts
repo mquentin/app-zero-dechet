@@ -1,33 +1,24 @@
 import { Injectable } from "@angular/core";
-import { UserService, BaseError } from "kinvey-nativescript-sdk/angular";
+import { Kinvey } from "kinvey-nativescript-sdk";
 import { User } from "./user.model";
 
 @Injectable()
 export class LoginService {
-    constructor(private userService: UserService) {}
+    constructor() {}
 
     register(user: User) {
-        return this.userService.signup({ username: user.email, password: user.password })
-            .catch(this.handleErrors);
+        return Kinvey.User.signup({ username: user.email, password: user.password });
     }
 
     login(user: User) {
-        return this.userService.login(user.email, user.password)
-            .catch(this.handleErrors);
+        return Kinvey.User.login(user.email, user.password);
     }
 
     logoff() {
-        return this.userService.logout()
-            .catch(this.handleErrors);
+        return Kinvey.User.logout();
     }
 
     resetPassword(email) {
-        return this.userService.resetPassword(email)
-            .catch(this.handleErrors);
-    }
-
-    handleErrors(error: BaseError) {
-        console.error(error.message);
-        return Promise.reject(error.message);
+        return Kinvey.User.resetPassword(email);
     }
 }

@@ -33,15 +33,12 @@ export class DechetListComponent {
     load() {
         this.loading.next("");
         this.store.load()
-            .subscribe(
-                () => {
-                    this.loaded.next("");
-                    this.listLoaded = true;
-                },
-                () => {
-                    alert("An error occurred loading your grocery list.");
-                }
-            );
+            .then(() => {
+                this.loaded.next("");
+                this.listLoaded = true;
+            }).catch(() => {
+            alert("An error occurred loading your grocery list.");
+        });
     }
 
     // The following trick makes the background color of each cell

@@ -6,8 +6,6 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 
-import { KinveyModule } from "kinvey-nativescript-sdk/angular";
-
 import { registerElement } from "nativescript-angular/element-registry";
 
 registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView);
@@ -49,11 +47,7 @@ setStatusBarColors();
         DechetModule,
         SettingsModule,
         NativeScriptUISideDrawerModule,
-        NativeScriptUIListViewModule,
-        KinveyModule.init({
-                "appKey": "kid_Bytb5ETpE",
-                "appSecret": "cb569f8694104f7cbd047d888724cf01"
-            })
+        NativeScriptUIListViewModule
     ],
     declarations: [
         AppComponent,
