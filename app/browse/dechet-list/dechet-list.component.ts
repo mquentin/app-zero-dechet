@@ -22,17 +22,17 @@ export class DechetListComponent {
     @Output() loading = new EventEmitter();
     @Output() loaded = new EventEmitter();
 
-    public store: DechetsService;
+    public dechetStore: DechetsService;
     listLoaded = false;
 
-    constructor(store: DechetsService, private routerExtensions: RouterExtensions) {
-        this.store = store;
+    constructor(dechetStore: DechetsService, private routerExtensions: RouterExtensions) {
+        this.dechetStore = dechetStore;
     }
 
     // Based on https://github.com/NativeScript/sample-Groceries/blob/master/app/groceries/grocery-list/grocery-list.component.ts
     load() {
         this.loading.next("");
-        this.store.load()
+        this.dechetStore.load()
             .then(() => {
                 this.loaded.next("");
                 this.listLoaded = true;

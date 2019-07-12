@@ -3,27 +3,36 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { alert } from "../shared";
 import { DechetsService } from "../shared/dechets.service";
+import { SolutionsService } from "../shared/solutions.service";
 import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "Dechet",
     moduleId: module.id,
-    templateUrl: "./dechet.component.html",
-    providers: [DechetsService]
+    templateUrl: "./dechet.component.html"
 })
 export class DechetComponent implements OnInit {
 
-    public store: DechetsService;
+    public dechetStore: DechetsService;
+    public solutionStore: SolutionsService;
     public dechetId: string = null;
 
-    constructor(private route: ActivatedRoute, private routerExtensions: RouterExtensions, store: DechetsService) {
-        this.store = store;
+    constructor(private route: ActivatedRoute, private routerExtensions: RouterExtensions, dechetStore: DechetsService, solutionStore: SolutionsService) {
+        this.dechetStore = dechetStore;
+        this.solutionStore = solutionStore;
         this.route.params.subscribe((params) => {
             this.dechetId = params["id"];
 
             if (this.dechetId) {
-                this.store.load(this.dechetId)
+                this.dechetStore.load(this.dechetId)
+                    .then(() => {
+
+                    }).catch(() => {
+                    alert("An error occurred loading your grocery list.");
+                });
+
+                this.solutionStore.load(this.dechetId)
                     .then(() => {
 
                     }).catch(() => {

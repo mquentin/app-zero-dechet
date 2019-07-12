@@ -7,13 +7,12 @@ import { DechetsService } from "../shared/dechets.service";
 @Component({
     selector: "Browse",
     moduleId: module.id,
-    templateUrl: "./browse.component.html",
-    providers: [DechetsService]
+    templateUrl: "./browse.component.html"
 })
 export class BrowseComponent implements OnInit {
     isLoading = false;
 
-    constructor(private store: DechetsService) {
+    constructor(private dechetStore: DechetsService) {
     }
 
     ngOnInit(): void {

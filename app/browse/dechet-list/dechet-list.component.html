@@ -2,7 +2,7 @@
     <ListView class="list-group"
               [row]="row"
               [class.visible]="listLoaded"
-              [items]="store.items | async"
+              [items]="dechetStore.items | async"
               (itemLoading)="makeBackgroundTransparent($event)" (loaded)="load()">
         <ng-template let-item="item">
             <StackLayout class="list-group-item" (tap)="onNavItemTap('/dechet/' + item._id)">

@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "5d28986e7e910233ed70d898",
+    "auteur": "kid_Bytb5ETpE",
+    "content": {
+      "contentType": "text",
+      "text": "this is my content text"
+    },
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01ef944b85ce4a62860ca6",
+    "dechetRating": 3,
+    "nom": "solution1",
+    "type": "zeroDechet",
+    "valideParAdmin": true,
+    "_acl": {
+      "creator": "kid_Bytb5ETpE"
+    },
+    "_kmd": {
+      "lmt": "2019-07-12T14:25:49.983Z",
+      "ect": "2019-07-12T14:25:49.983Z"
+    }
+  },
+  {
+    "_id": "5d2898c41b953833e83185c5",
+    "content": {
+      "contentType": "object",
+      "object": {
+        "locatisation": "coords"
+      }
+    },
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01ef944b85ce4a62860ca6",
+    "dechetRating": 1,
+    "nom": "solution3",
+    "auteur": "kid_Bytb5ETpE",
+    "type": "zeroDechet",
+    "valideParAdmin": true,
+    "_acl": {
+      "creator": "kid_Bytb5ETpE"
+    },
+    "_kmd": {
+      "lmt": "2019-07-12T14:27:16.924Z",
+      "ect": "2019-07-12T14:27:16.924Z"
+    }
+  }
+]
