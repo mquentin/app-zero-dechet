@@ -11,7 +11,7 @@
     "dechetRating": 3,
     "nom": "solution1",
     "type": "zeroDechet",
-    "valideParAdmin": true,
+    "valideParAdmin": 1,
     "_acl": {
       "creator": "kid_Bytb5ETpE"
     },
@@ -34,7 +34,7 @@
     "nom": "solution3",
     "auteur": "kid_Bytb5ETpE",
     "type": "zeroDechet",
-    "valideParAdmin": true,
+    "valideParAdmin": 1,
     "_acl": {
       "creator": "kid_Bytb5ETpE"
     },

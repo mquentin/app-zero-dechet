@@ -3,7 +3,7 @@ import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
 @Component({
-    selector: "Settings",
+    selector: "zd-settings",
     moduleId: module.id,
     templateUrl: "./settings.component.html"
 })

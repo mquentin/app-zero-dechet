@@ -20,7 +20,6 @@ import { BackendService } from "./shared/backend.service";
 import { MarkerService } from "./shared/marker.service";
 
 import { DechetsService } from "./shared/dechets.service";
-import { SolutionsService } from "./shared/solutions.service";
 
 import { LoginModule } from "./login/login.module";
 import { HomeModule } from "./home/home.module";
@@ -37,8 +36,7 @@ setStatusBarColors();
         LoginService,
         MarkerService,
         authProviders,
-        DechetsService,
-        SolutionsService
+        DechetsService
     ],
     imports: [
         NativeScriptModule,

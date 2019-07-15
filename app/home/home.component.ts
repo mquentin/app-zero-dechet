@@ -6,7 +6,7 @@ import * as app from "tns-core-modules/application";
 import { LoginService } from "../shared/login.service";
 
 @Component({
-    selector: "Home",
+    selector: "zd-home",
     moduleId: module.id,
     templateUrl: "./home.component.html"
 })

@@ -8,8 +8,9 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-    selector: "Dechet",
+    selector: "zd-dechet",
     moduleId: module.id,
+    providers: [SolutionsService],
     templateUrl: "./dechet.component.html"
 })
 export class DechetComponent implements OnInit {

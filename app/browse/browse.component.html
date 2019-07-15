@@ -16,10 +16,10 @@
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <gr-dechet-list
+    <zd-dechet-list
             [row]="2"
             (loading)="showActivityIndicator()"
-            (loaded)="hideActivityIndicator()"></gr-dechet-list>
+            (loaded)="hideActivityIndicator()"></zd-dechet-list>
 
     <ActivityIndicator
             [busy]="isLoading"

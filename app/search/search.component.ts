@@ -6,7 +6,7 @@ import { MapboxViewApi, Viewport as MapboxViewport } from "nativescript-mapbox";
 import { MarkerService, GeoJson } from "../shared";
 
 @Component({
-    selector: "Search",
+    selector: "zd-search",
     moduleId: module.id,
     styleUrls: ["./search-common.css"],
     templateUrl: "./search.component.html"

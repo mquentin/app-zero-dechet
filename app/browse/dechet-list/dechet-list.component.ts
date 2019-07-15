@@ -10,7 +10,7 @@ import { alert } from "../../shared";
 declare var UIColor: any;
 
 @Component({
-    selector: "gr-dechet-list",
+    selector: "zd-dechet-list",
     moduleId: module.id,
     templateUrl: "./dechet-list.component.html",
     styleUrls: ["./dechet-list.component.css"],

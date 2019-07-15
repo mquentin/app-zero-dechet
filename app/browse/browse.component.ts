@@ -5,7 +5,7 @@ import * as app from "tns-core-modules/application";
 import { DechetsService } from "../shared/dechets.service";
 
 @Component({
-    selector: "Browse",
+    selector: "zd-browse",
     moduleId: module.id,
     templateUrl: "./browse.component.html"
 })

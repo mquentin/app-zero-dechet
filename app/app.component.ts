@@ -9,7 +9,7 @@ import { LoginService } from "./shared/login.service";
 
 @Component({
     moduleId: module.id,
-    selector: "gr-app",
+    selector: "zd-app",
     templateUrl: "app.component.html"
 })
 export class AppComponent implements OnInit {

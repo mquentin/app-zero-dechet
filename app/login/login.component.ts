@@ -14,7 +14,7 @@ import { User } from "../shared/user.model";
 import { LoginService } from "../shared/login.service";
 
 @Component({
-    selector: "gr-login",
+    selector: "zd-login",
     moduleId: module.id,
     templateUrl: "./login.component.html",
     styleUrls: ["./login-common.css", "./login.component.css"],

@@ -65,7 +65,7 @@
     "component-selector": [
       true,
       "element",
-      "gr",
+      "zd",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
