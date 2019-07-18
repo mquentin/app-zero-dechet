@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Input, Output } from "@angular/core";
-import * as utils from "utils/utils";
+import * as utils from "tns-core-modules/utils/utils";
 
 import { RouterExtensions } from "nativescript-angular/router";
 
@@ -17,7 +17,6 @@ declare var UIColor: any;
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DechetListComponent {
-    @Input() showDeleted: boolean;
     @Input() row;
     @Output() loading = new EventEmitter();
     @Output() loaded = new EventEmitter();

@@ -1,0 +1,8 @@
+<GridLayout columns="auto, auto">
+    <Label col="1" text="contentType" class="p-l-15 p-b-10 m-r-20 text-secondary"></Label>
+    <Label col="2" class="text p-b-10">
+        <FormattedString>
+            <Span [text]="(dechetContent | async)?.contentType"></Span>
+        </FormattedString>
+    </Label>
+</GridLayout>

@@ -4,181 +4,48 @@
     "valideParAdmin": 1,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "dechet1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "_kmd": {
-      "lmt": "2019-06-13T06:39:16.052Z",
-      "ect": "2019-06-13T06:39:16.052Z"
-    }
+    "nom": "dechet1"
   },
   {
     "_id": "5d01efb06295a238e735c285",
     "valideParAdmin": 1,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "dechet2",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "_kmd": {
-      "lmt": "2019-06-13T06:39:44.577Z",
-      "ect": "2019-06-13T06:39:44.577Z"
-    }
+    "nom": "dechet2"
   },
   {
     "_id": "5d01efcd2138b22a95a2419a",
     "valideParAdmin": 0,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "dechet3NotValidatedYet",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "_kmd": {
-      "lmt": "2019-06-13T06:40:13.606Z",
-      "ect": "2019-06-13T06:40:13.606Z"
-    }
+    "nom": "dechet3NotValidatedYet"
   },
   {
     "_id": "5d11d3e08f80276de7465a2e",
     "nom": "aaaaaaa",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
+    "valideParAdmin": 1
   },
   {
     "_id": "5d288ffd96a3881d9dbc0f7f",
     "nom": "aaaaaaa11",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
+    "valideParAdmin": 1
   },
   {
     "_id": "5d288ffd5e24b02eeef95062",
     "nom": "aaaaaaa11",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
+    "valideParAdmin": 1
   },
   {
     "_id": "5d288ffeecc87c44b9610a7c",
     "nom": "aaaaaaa11",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffe7e910233ed702c15",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffe20b56d2ef335cb5b",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffee949d344bed441a1",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffeecc87c44b9610a7d",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffe1b953833e830d511",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
-  },
-  {
-    "_id": "5d288ffeecc87c44b9610a7e",
-    "nom": "aaaaaaa11",
-    "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "auteur": "5cefba05c5bfbc54d3f052d1",
-    "_acl": {
-      "creator": "kid_Bytb5ETpE"
-    },
-    "valideParAdmin": 1,
-    "_kmd": {
-      "lmt": "2019-06-25T07:59:14.618Z",
-      "ect": "2019-06-25T07:57:20.485Z"
-    }
+    "valideParAdmin": 1
   }
 ]

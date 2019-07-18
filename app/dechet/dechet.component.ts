@@ -35,9 +35,9 @@ export class DechetComponent implements OnInit {
 
                 this.solutionStore.load(this.dechetId)
                     .then(() => {
-
+                        console.log("dechetStore.items.lenght", this.solutionStore.items.value.length);
                     }).catch(() => {
-                    alert("An error occurred loading your grocery list.");
+                    alert("An error occurred loading your solution list.");
                 });
             }
 
