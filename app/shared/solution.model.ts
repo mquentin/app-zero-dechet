@@ -7,11 +7,11 @@ export class Solution {
 
     type: string;
     dechetId: string;
-    solutionRating: number;
+    localisationSolution: string;
     content: any;
 
 
-    constructor(nom: string, auteur: string, public cvalideParAdmin?, public cid?, public ctype?, public cdechetId?, public csolutionRating?, public ccontent?) {
+    constructor(nom: string, auteur: string, public cvalideParAdmin?, public cid?, public ctype?, public cdechetId?, public clocalisationSolution?, public ccontent?) {
         this.nom = nom;
         this.auteur = auteur;
 
@@ -35,8 +35,8 @@ export class Solution {
             this.dechetId = cdechetId;
         }
 
-        if (csolutionRating) {
-            this.solutionRating = csolutionRating;
+        if (clocalisationSolution) {
+            this.localisationSolution = clocalisationSolution;
         }
 
         if (ccontent) {
