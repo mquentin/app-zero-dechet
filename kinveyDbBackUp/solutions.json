@@ -2,31 +2,302 @@
   {
     "_id": "5d28986e7e910233ed70d898",
     "auteur": "kid_Bytb5ETpE",
-    "content": {
-      "contentType": "text",
-      "text": "this is my content text"
-    },
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "dechetId": "5d01ef944b85ce4a62860ca6",
-    "solutionRating": 3,
-    "nom": "solution1",
+    "localisationSolution": "lyon",
+    "nom": "Oriculi en bambou sans emballage",
     "type": "zeroDechet",
-    "valideParAdmin": 1
+    "valideParAdmin": 1,
+    "content": {
+      "zeroDechet_noteEthique": 3,
+      "zeroDechet_marque": "Lamazouna (France)",
+      "zeroDechet_fabrication": "Chine",
+      "zeroDechet_provenance": "",
+      "zeroDechet_impactEnvironnemental": "bambou, vigilance nécessaire",
+      "zeroDechet_label": "",
+      "zeroDechet_transport": "8 022 km minimum",
+      "zeroDechet_emballage": "",
+      "zeroDechet_infoSolution": "",
+      "zeroDechet_magasins": [
+        {
+          "nom": "À La Source",
+          "adresse": "63 Rue de la Part-Dieu\n 69003, Lyon",
+          "horaires": "",
+          "site": "www.alasource-lyon.com/"
+        },
+        {
+          "nom": "Bulko",
+          "adresse": "3 Quai Jean Moulin\n 69001, Lyon",
+          "horaires": "",
+          "site": "www.facebook.com/bulkolyon/"
+        }
+      ]
+    }
   },
   {
     "_id": "5d2898c41b953833e83185c5",
-    "content": {
-      "contentType": "object",
-      "object": {
-        "locatisation": "coords"
-      }
-    },
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
     "dechetId": "5d01ef944b85ce4a62860ca6",
-    "solutionRating": 1,
-    "nom": "solution3",
+    "localisationSolution": "lyon",
+    "nom": "Oriculi en bambou avec emballage",
     "auteur": "kid_Bytb5ETpE",
     "type": "zeroDechet",
-    "valideParAdmin": 1
+    "valideParAdmin": 1,
+    "content": {
+      "zeroDechet_noteEthique": 3,
+      "zeroDechet_marque": "Lamazouna (France)",
+      "zeroDechet_fabrication": "Chine",
+      "zeroDechet_provenance": "",
+      "zeroDechet_impactEnvironnemental": "bambou, vigilance nécessaire",
+      "zeroDechet_label": "",
+      "zeroDechet_transport": "8 022 km minimum",
+      "zeroDechet_emballage": "carton",
+      "zeroDechet_infoSolution": "",
+      "zeroDechet_magasins": [
+        {
+          "nom": "La Vie Claire",
+          "adresse": "134 Rue Dedieu\n 69100, Villeurbanne",
+          "horaires": "",
+          "site": ""
+        },
+        {
+          "nom": "Le Biocal",
+          "adresse": "24 Rue Paul Verlaine\n 69100, Villeurbanne",
+          "horaires": "",
+          "site": "www.lebiocal.fr/"
+        }
+      ]
+    }
+  },
+  {
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01ef944b85ce4a62860ca6",
+    "localisationSolution": "lyon",
+    "nom": "Cotons-tiges en coton + papier",
+    "auteur": "kid_Bytb5ETpE",
+    "type": "recyclage",
+    "valideParAdmin": 1,
+    "content": {
+      "recyclage_info": "cotons-tiges en coton + plastique (interdit en 2020).",
+      "recyclage_actions": [
+        {
+          "index": 0,
+          "text": "Découper les têtes en cotons et les jeter à la poubelle."
+        },
+        {
+          "index": 1,
+          "text": "Placer les tiges dans une enveloppe."
+        },
+        {
+          "index": 2,
+          "text": "Fermer l’enveloppe lorsqu’elle est pleine et la mettre dans le bac jaune."
+        },
+        {
+          "index": 3,
+          "text": "[Optionnel Cf. fiche de tri mouvement de palier (demander l’autorisation).]"
+        }
+      ]
+    }
+  },
+  {
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01ef944b85ce4a62860ca6",
+    "localisationSolution": "lyon",
+    "nom": "Cotons-tiges en coton + bambou",
+    "auteur": "kid_Bytb5ETpE",
+    "type": "recyclage",
+    "valideParAdmin": 1,
+    "content": {
+      "recyclage_info": "cotons-tiges en coton + plastique (interdit en 2020).",
+      "recyclage_actions": [
+        {
+          "index": 0,
+          "text": "Découper les têtes en cotons et les jeter à la poubelle."
+        },
+        {
+          "index": 1,
+          "text": "Option A - Composter les tiges en bambou dans un bac de compostage (par exemple dans une unité de compostage de votre quartier)."
+        },
+        {
+          "index": 2,
+          "text": "Option B - Placer les tiges dans une enveloppe."
+        },
+        {
+          "index": 3,
+          "text": "Option B - Fermer l’enveloppe lorsqu’elle est pleine et la mettre dans le bac jaune."
+        }
+      ]
+    }
+  },
+  {
+    "auteur": "kid_Bytb5ETpE",
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efcd2138b22a95a2419a",
+    "localisationSolution": "lyon",
+    "nom": "Pâtes coquillettes complètes",
+    "type": "zeroDechet",
+    "valideParAdmin": 1,
+    "content": {
+      "zeroDechet_noteEthique": 4,
+      "zeroDechet_marque": "NR (non renseigné)",
+      "zeroDechet_fabrication": "",
+      "zeroDechet_provenance": "UE",
+      "zeroDechet_impactEnvironnemental": "",
+      "zeroDechet_label": "AB – Agriculture Biologique (Europe)",
+      "zeroDechet_transport": "jusqu’à 3 391 km",
+      "zeroDechet_emballage": "",
+      "zeroDechet_infoSolution": "",
+      "zeroDechet_magasins": [
+        {
+          "nom": "Vrac'n Roll",
+          "adresse": "254 Rue Francis de Pressensé\n 69100, Villeurbanne",
+          "horaires": "",
+          "site": "www.vracnroll.com/"
+        }
+      ]
+    }
+  },
+  {
+    "auteur": "kid_Bytb5ETpE",
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efcd2138b22a95a2419a",
+    "localisationSolution": "lyon",
+    "nom": "Pâtes coquillettes complètes - France",
+    "type": "zeroDechet",
+    "valideParAdmin": 1,
+    "content": {
+      "zeroDechet_noteEthique": 5,
+      "zeroDechet_marque": "NR (non renseigné)",
+      "zeroDechet_fabrication": "",
+      "zeroDechet_provenance": "provenance française et locale",
+      "zeroDechet_impactEnvironnemental": "",
+      "zeroDechet_label": "AB – Agriculture Biologique (Europe)",
+      "zeroDechet_transport": "moins de 100km",
+      "zeroDechet_emballage": "",
+      "zeroDechet_infoSolution": "",
+      "zeroDechet_magasins": []
+    }
+  },
+  {
+    "auteur": "kid_Bytb5ETpE",
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efcd2138b22a95a2419a",
+    "localisationSolution": "lyon",
+    "nom": "DIY: pochette en emballage plastique",
+    "type": "revalorisation_UpcyclingTuto",
+    "valideParAdmin": 1,
+    "content": {
+      "revalorisation_UpcyclingTuto_source": "www.planetaddict.com/upcycling-plastique/",
+      "revalorisation_UpcyclingTuto_materielList": [
+        "Un emballage alimentaire propre",
+        "Une fermeture éclaire (de taille plus grande que l’emballage)",
+        "Une feuille de plastique collant de type protège cahier",
+        "Une machine à coudre",
+        "Des ciseaux",
+        "Une règle"
+      ],
+      "revalorisation_UpcyclingTuto_actions": [
+        {
+          "index": 0,
+          "text": "Découper les bords haut et bas de l’emballage et choisir le sens pour la pochette, puis ouvrir les côtés. On peut aussi choisir d’assembler deux emballages."
+        },
+        {
+          "index": 1,
+          "text": "Coller le film plastique transparent de chaque côté, en s’aidant d’une règle pour éviter les bulles d’air."
+        },
+        {
+          "index": 2,
+          "text": "Placer la fermeture éclair ouverte sur l’endroit de l’emballage (le côté qui se voit), côté fermeture sur le bord de l’emballage et les « dents » vers le bas."
+        },
+        {
+          "index": 3,
+          "text": "Coudre en prenant soin de rester droit et de ne pas rompre l’emballage."
+        },
+        {
+          "index": 4,
+          "text": "Plier sur la couture pour rabattre la fermeture vers l’intérieur et coudre une seconde fois."
+        },
+        {
+          "index": 5,
+          "text": "Procéder de même pour l’autre face de la pochette. C’est un peu plus difficile étant donné que l’autre côté de la fermeture est déjà cousu."
+        },
+        {
+          "index": 6,
+          "text": "Coudre les bords de la pochette (et le bas si ce n’est pas sur un plus), sur l’envers. Insister sur les coins en passant plusieurs fois."
+        },
+        {
+          "index": 7,
+          "text": "Retourner délicatement la pochette pour ne pas déchirer les coutures et travailler les coins."
+        }
+      ]
+    }
+  },
+  {
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efcd2138b22a95a2419a",
+    "localisationSolution": "lyon",
+    "nom": "Emballage en plastique",
+    "auteur": "kid_Bytb5ETpE",
+    "type": "recyclage",
+    "valideParAdmin": 1,
+    "content": {
+      "recyclage_info": "Les seuls plastiques recyclables sont : le PET, le PEHD, et le PP. On peut connaître la nature du plastique grâce à un pictogramme (ruban de Möbius) présent sur les emballages. Les numéros 1, 2 et 5 sont recyclables. Les autres non.",
+      "recyclage_actions": [
+        {
+          "index": 0,
+          "text": "S’il s’agit d’un PET, PEHD ou PP, je mets mon emballage propre dans le bac jaune"
+        },
+        {
+          "index": 1,
+          "text": "S’il s’agit d’un autre type de plastique, je le mets à la poubelle, avec les ordures ménagères non recyclées."
+        }
+      ]
+    }
+  },
+  {
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efcd2138b22a95a2419a",
+    "localisationSolution": "lyon",
+    "nom": "Emballage en carton",
+    "auteur": "kid_Bytb5ETpE",
+    "type": "recyclage",
+    "valideParAdmin": 1,
+    "content": {
+      "recyclage_info": "",
+      "recyclage_actions": [
+        {
+          "index": 0,
+          "text": "Je le mets au recyclage dans le bac jaune."
+        }
+      ]
+    }
+  },
+  {
+    "auteur": "kid_Bytb5ETpE",
+    "dateDeCreation": "2019-05-30T11:09:57.266Z",
+    "dechetId": "5d01efb06295a238e735c285",
+    "localisationSolution": "lyon",
+    "nom": "Noix de lavage Rhita",
+    "type": "zeroDechet",
+    "valideParAdmin": 1,
+    "content": {
+      "zeroDechet_noteEthique": 2,
+      "zeroDechet_marque": "Ecoidées",
+      "zeroDechet_fabrication": "",
+      "zeroDechet_provenance": "Inde",
+      "zeroDechet_impactEnvironnemental": "Peu d’informations sont disponibles sur les conditions de production et de rémunération de la population locale. L’engouement occidental pour ces noix de lavages, qui ont une efficacité limitée lorsqu’elles sont utilisées seules, rend l’accès à ces noix de plus en plus difficile pour les populations locales, les obligeant alors à acheter des produits plus chimiques et importés.",
+      "zeroDechet_label": "AB – Agriculture Biologique",
+      "zeroDechet_transport": "7 369 km minimum",
+      "zeroDechet_emballage": "tissu",
+      "zeroDechet_infoSolution": "Les Noix de Lavage Rhita sont les fruits de l’arbre à savon dit savonnier. Elles sont très populaire en Inde et au Népal où elles sont utilisées pour les lavages des textiles précieux (cachemire,soie...).",
+      "zeroDechet_magasins": [
+        {
+          "nom": "La Vie Claire",
+          "adresse": "134 Rue Dedieu\n 69100, Villeurbanne",
+          "horaires": "",
+          "site": ""
+        }
+      ]
+    }
   }
 ]
