@@ -37,7 +37,7 @@ export class SolutionsService {
                         dataSolution._id,
                         dataSolution.type,
                         dataSolution.dechetId,
-                        dataSolution.dechetRating,
+                        dataSolution.solutionRating,
                         dataSolution.content,
                     )
                 );
