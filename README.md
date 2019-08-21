@@ -1,4 +1,4 @@
-<h1 id="zeroDechet">zeroDechet</h1>
+﻿<h1 id="zeroDechet">zeroDechet</h1>
 
 <h2 id="development">Development</h2>
 
@@ -40,7 +40,7 @@ $ tns run android
 - run and debug:
     tns debug android
     
-<h3 id="update">Update the app - nativescript, npm packages, platform...</h3>
+<h2 id="update">Update the app - nativescript, npm packages, platform...</h2>
 
 Also remove the existing platform before: tns platform remove android
     

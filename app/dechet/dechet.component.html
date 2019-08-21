@@ -46,7 +46,7 @@
                 <Label [text]="(dechetStore.myItem | async)?.auteur" row="3" col="1" class="text p-b-10"></Label>
 
                 <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="5"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.astuce" row="5" col="1" class="text p-b-10"></Label>
+                <Label [text]="(dechetStore.myItem | async)?.info" row="5" col="1" class="text p-b-10"></Label>
 
             </GridLayout>
 
@@ -55,19 +55,15 @@
             </GridLayout>
 
             <GridLayout row="4">
-                <ListView class="list-group" [items]="solutionStore.items | async" style="height:1250px">
-                    <ng-template let-solution="item">
-                        <FlexboxLayout flexDirection="row" class="list-group-item">
-                            <Label class="p-b-10">
-                                <FormattedString ios:fontFamily="system">
-                                    <Span text="&#xf1b9;   " class="fa text-primary"></Span>
-                                    <Span [text]="solution.nom"></Span>
-                                </FormattedString>
-                            </Label>
-                        </FlexboxLayout>
+                <ListView class="list-group" [items]="solutionStore.items | async">
+                    <ng-template let-solution="item" let-i="index">
+                        <StackLayout orientation="vertical" class="list-group-item">
+                            <Label [text]="solution.nom"></Label>
+                        </StackLayout>
                     </ng-template>
                 </ListView>
             </GridLayout>
+
         </GridLayout>
     </ScrollView>
 </GridLayout>

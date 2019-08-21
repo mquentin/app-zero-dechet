@@ -47,7 +47,7 @@ export class DechetsService {
                             dataDechet.auteur,
                             dataDechet.cvalideParAdmin,
                             dataDechet._id,
-                            dataDechet.astuce,
+                            dataDechet.info,
                             dataDechet.content
                         );
                         this.publishLoadOneUpdates();
@@ -73,7 +73,7 @@ export class DechetsService {
                             dataDechet.auteur,
                             dataDechet.cvalideParAdmin,
                             dataDechet._id,
-                            dataDechet.astuce,
+                            dataDechet.info,
                             dataDechet.content
                         )
                     );

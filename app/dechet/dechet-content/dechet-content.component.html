@@ -1,8 +1,25 @@
-<GridLayout columns="auto, auto">
-    <Label col="1" text="contentType" class="p-l-15 p-b-10 m-r-20 text-secondary"></Label>
-    <Label col="2" class="text p-b-10">
-        <FormattedString>
-            <Span [text]="(dechetContent | async)?.contentType"></Span>
-        </FormattedString>
-    </Label>
+<GridLayout row="auto, auto">
+    <ListView class="list-group" [items]="dechetContent?.materiaux">
+        <ng-template let-materiau="item" let-i="index">
+            <StackLayout orientation="vertical" class="list-group-item">
+                <Label *ngIf="materiau.nom"
+                       [text]="materiau.nom"></Label>
+                <Label *ngIf="materiau.info"
+                       [text]="'info: ' + materiau.info"></Label>
+                <Label *ngIf="materiau.Pesticides"
+                       [text]="'Pesticides: ' + materiau.Pesticides"></Label>
+                <Label *ngIf="materiau.energieElectrique"
+                       [text]="'energieElectrique: ' + materiau.energieElectrique"></Label>
+                <Label *ngIf="materiau.energiesFossiles"
+                       [text]="'energiesFossiles: ' + materiau.energiesFossiles"></Label>
+                <Label *ngIf="materiau.transport"
+                       [text]="'transport: ' + materiau.transport"></Label>
+                <Label *ngIf="materiau.deforestation"
+                       [text]="'deforestation: ' + materiau.deforestation"></Label>
+                <Label *ngIf="materiau.pollutionChimique"
+                       [text]="'pollutionChimique: ' + materiau.pollutionChimique"></Label>
+                <Label *ngIf="materiau.recyclage1" [text]="'recyclage1: ' + materiau.recyclage1"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
 </GridLayout>

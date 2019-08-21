@@ -4,20 +4,107 @@
     "valideParAdmin": 1,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "Coton tige"
+    "nom": "Coton tige",
+    "info": "Les cotons-tiges jetables sont composés de coton et d’une tige en papier ou en bois. Ils sont par\nailleurs toujours vendus dans des emballages plastiques ou papiers.",
+    "content": {
+      "materiaux": [
+        {
+          "nom": "Coton",
+          "info": "",
+          "Pesticides": "La production de coton consomme 24% des pesticides au niveau mondial.",
+          "eau": "Produire 1 kilo de coton nécessite 5 620 litres d’eau.",
+          "energieElectrique": "",
+          "energiesFossiles": "",
+          "transport": "1% de la production mondiale de coton est européenne, le reste est importé.",
+          "deforestation": "",
+          "pollutionChimique": "On utilise du chlore et d’autres produits chimiques pour blanchir le coton.",
+          "recyclage1": ""
+        },
+        {
+          "nom": "Papier",
+          "info": "",
+          "Pesticides": "",
+          "eau": "",
+          "energieElectrique": "",
+          "energiesFossiles": "",
+          "transport": "",
+          "deforestation": "Contribution à la déforestation.",
+          "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature (blanchiment).",
+          "recyclage1": ""
+        }
+      ]
+    }
   },
   {
     "_id": "5d01efb06295a238e735c285",
     "valideParAdmin": 1,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "dechet2"
+    "nom": "Lessive",
+    "info": "Une famille française réalise en moyenne par an réalise 220 lessives, soit 26 litres de lessive\nliquide ou 40 kg de lessive poudre. [Source : www.encyclo-ecolo.com]\nLes emballages de lessives sont généralement en plastique lorsqu’il s’agit de lessive liquide ou en carton lorsqu’il\ns’agit de lessive en poudre.",
+    "content": {
+      "materiaux": [
+        {
+          "nom": "Plastique",
+          "info": "Les seuls plastiques recyclables sont : le PET, le PEHD, et le PP. On peut connaître la nature du plastique\ngrâce à un pictogramme (ruban de Möbius) présent sur les emballages. Les numéros 1, 2 et 5 sont\nrecyclables. Les autres non.",
+          "Pesticides": "",
+          "eau": "Sa production est gourmande en eau (distillation, cracking, polymérisation, ajout de plastifiants, ajout\nd’additifs et façonnage).",
+          "energieElectrique": "Sa production est énergivore.",
+          "energiesFossiles": "Sa production nécessite l’utilisation d’énergies fossiles : pétrole, gaz naturel ou charbon.",
+          "transport": "",
+          "deforestation": "",
+          "pollutionChimique": "Oui",
+          "recyclage1": "Recycler du plastique, c’est long, coûteux et énergivore."
+        },
+        {
+          "nom": "Carton",
+          "info": "",
+          "Pesticides": "",
+          "eau": "",
+          "energieElectrique": "",
+          "energiesFossiles": "",
+          "transport": "",
+          "deforestation": "Contribution à la déforestation.",
+          "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature.",
+          "recyclage1": "L’emballage est recyclable à 100%."
+        }
+      ]
+    }
   },
   {
     "_id": "5d01efcd2138b22a95a2419a",
-    "valideParAdmin": 0,
+    "valideParAdmin": 1,
     "auteur": "5cefba05c5bfbc54d3f052d1",
     "dateDeCreation": "2019-05-30T11:09:57.266Z",
-    "nom": "dechet3NotValidatedYet"
+    "nom": "Pâtes",
+    "info": "Les emballages de pâtes sont essentiellement en plastique ou en papier / carton.",
+    "content": {
+      "materiaux": [
+        {
+          "nom": "Plastique",
+          "info": "Les seuls plastiques recyclables sont : le PET, le PEHD, et le PP. On peut connaître la nature du plastique\ngrâce à un pictogramme (ruban de Möbius) présent sur les emballages. Les numéros 1, 2 et 5 sont\nrecyclables. Les autres non.",
+          "Pesticides": "",
+          "eau": "Sa production est gourmande en eau (distillation, cracking, polymérisation, ajout de plastifiants, ajout\nd’additifs et façonnage).",
+          "energieElectrique": "Sa production est énergivore.",
+          "energiesFossiles": "Sa production nécessite l’utilisation d’énergies fossiles : pétrole, gaz naturel ou charbon.",
+          "transport": "",
+          "deforestation": "",
+          "pollutionChimique": "Oui",
+          "recyclage1": "Recycler du plastique, c’est long, coûteux et énergivore."
+        },
+        {
+          "nom": "Carton",
+          "info": "",
+          "Pesticides": "",
+          "eau": "",
+          "energieElectrique": "",
+          "energiesFossiles": "",
+          "transport": "",
+          "deforestation": "Contribution à la déforestation.",
+          "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature.",
+          "recyclage1": "L’emballage est recyclable à 100%."
+        }
+      ]
+    }
   }
 ]

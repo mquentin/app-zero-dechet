@@ -5,10 +5,10 @@ export class Dechet {
     auteur: string;
     dateDeCreation: Date;
 
+    info: string;
     content: any;
-    astuce: any;
 
-    constructor(nom: string, auteur: string, public cvalideParAdmin?, public cid?, public castuce?, public cContent?) {
+    constructor(nom: string, auteur: string, public cvalideParAdmin?, public cid?, public cInfo?, public cContent?) {
         this.nom = nom;
         this.auteur = auteur;
 
@@ -18,12 +18,12 @@ export class Dechet {
             this._id = cid;
         }
 
-        if (cContent) {
-            this.content = cContent;
+        if (cInfo) {
+            this.info = cInfo;
         }
 
-        if (castuce) {
-            this.astuce = castuce;
+        if (cContent) {
+            this.content = cContent;
         }
 
         if (cvalideParAdmin) {
