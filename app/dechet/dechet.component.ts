@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import { TabView } from "tns-core-modules/ui/tab-view";
 import * as app from "tns-core-modules/application";
 import { alert } from "../shared";
 import { DechetsService } from "../shared/dechets.service";
@@ -15,11 +16,15 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class DechetComponent implements OnInit {
 
+    public tabSelectedIndex: number;
+
     public dechetStore: DechetsService;
     public solutionStore: SolutionsService;
     public dechetId: string = null;
 
     constructor(private route: ActivatedRoute, private routerExtensions: RouterExtensions, dechetStore: DechetsService, solutionStore: SolutionsService) {
+        this.tabSelectedIndex = 0;
+
         this.dechetStore = dechetStore;
         this.solutionStore = solutionStore;
         this.route.params.subscribe((params) => {
@@ -35,7 +40,7 @@ export class DechetComponent implements OnInit {
 
                 this.solutionStore.load(this.dechetId)
                     .then(() => {
-                        console.log("dechetStore.items.lenght", this.solutionStore.items.value.length);
+
                     }).catch(() => {
                     alert("An error occurred loading your solution list.");
                 });
@@ -55,5 +60,15 @@ export class DechetComponent implements OnInit {
 
     goBack(): void {
         this.routerExtensions.back();
+    }
+
+    changeTab() {
+        if (this.tabSelectedIndex === 0) {
+            this.tabSelectedIndex = 1;
+        } else if (this.tabSelectedIndex === 1) {
+            this.tabSelectedIndex = 2;
+        } else if (this.tabSelectedIndex === 2) {
+            this.tabSelectedIndex = 0;
+        }
     }
 }

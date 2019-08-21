@@ -20,15 +20,12 @@
         <Label col="0" text="&#xf104;" class="fa"></Label>
         <Label col="1" text="Retour" class="p-r-10"></Label>
     </GridLayout>
+    <TabView [(ngModel)]="tabSelectedIndex" row="1" col="0" height="100%">
+        <GridLayout rows="*,*,*" columns="*" *tabItem="{title: 'Info'}">
+            <GridLayout row="0" col="0" rows="*,*,*,*,*" columns="*, *">
 
-    <ScrollView row="1" col="0">
-        <GridLayout rows="auto, auto, auto, auto, auto">
-            <Image row="1" [src]="'res://logo_login'" stretch="aspectFill" height="200" class="m-b-15"></Image>
-
-            <GridLayout row="2" rows="*,*,*,*,*" columns="auto, auto">
-
-                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary"></Label>
-                <Label col="1" class="text p-b-10">
+                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="0"></Label>
+                <Label row="0" col="1" class="text p-b-10">
                     <FormattedString>
                         <Span [text]="(dechetStore.myItem | async)?._id"></Span>
                     </FormattedString>
@@ -43,18 +40,19 @@
                        class="text p-b-10"></Label>
 
                 <Label text="auteur" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.auteur" row="3" col="1" class="text p-b-10"></Label>
+                <Label [text]="(dechetStore.myItem | async)?.auteur" row="3" col="1"
+                       class="text p-b-10"></Label>
 
-                <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="5"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.info" row="5" col="1" class="text p-b-10"></Label>
+                <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="4"></Label>
+                <Label [text]="(dechetStore.myItem | async)?.info" row="4" col="1" class="text p-b-10"></Label>
 
             </GridLayout>
 
-            <GridLayout row="3">
+            <GridLayout row="1" col="0">
                 <zd-dechet-content [dechetContent]="(dechetStore.myItem | async)?.content"></zd-dechet-content>
             </GridLayout>
 
-            <GridLayout row="4">
+            <GridLayout row="2" col="0">
                 <ListView class="list-group" [items]="solutionStore.items | async">
                     <ng-template let-solution="item" let-i="index">
                         <StackLayout orientation="vertical" class="list-group-item">
@@ -67,5 +65,17 @@
             </GridLayout>
 
         </GridLayout>
-    </ScrollView>
+        <StackLayout *tabItem="{title: 'Zéro déchets'}">
+            <StackLayout>
+                <Button text="Change Tab via ngModel" (tap)="changeTab()"
+                        class="btn btn-primary btn-active"></Button>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'Recyclage'}">
+            <StackLayout>
+                <Button text="Change Tab via ngModel" (tap)="changeTab()"
+                        class="btn btn-primary btn-active"></Button>
+            </StackLayout>
+        </StackLayout>
+    </TabView>
 </GridLayout>

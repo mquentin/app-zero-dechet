@@ -11,6 +11,6 @@ export class DechetContentComponent {
     @Input() dechetContent: any;
 
     constructor() {
-        console.log("Build content constructor", this.dechetContent);
+
     }
 }
