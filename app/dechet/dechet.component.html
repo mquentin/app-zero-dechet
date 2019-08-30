@@ -21,61 +21,20 @@
         <Label col="1" text="Retour" class="p-r-10"></Label>
     </GridLayout>
     <TabView [(ngModel)]="tabSelectedIndex" row="1" col="0" height="100%">
-        <GridLayout rows="*,*,*" columns="*" *tabItem="{title: 'Info'}">
-            <GridLayout row="0" col="0" rows="*,*,*,*,*" columns="*, *">
-
-                <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="0"></Label>
-                <Label row="0" col="1" class="text p-b-10">
-                    <FormattedString>
-                        <Span [text]="(dechetStore.myItem | async)?._id"></Span>
-                    </FormattedString>
-                </Label>
-
-                <Label text="Date de création" class="p-l-15 p-b-10 m-r-20 text-secondary" row="1"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.dateDeCreation" row="1" col="1"
-                       class="text p-b-10"></Label>
-
-                <Label text="valideParAdmin" class="p-l-15 p-b-10 m-r-20 text-secondary" row="2"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.valideParAdmin" row="2" col="1"
-                       class="text p-b-10"></Label>
-
-                <Label text="auteur" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.auteur" row="3" col="1"
-                       class="text p-b-10"></Label>
-
-                <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="4"></Label>
-                <Label [text]="(dechetStore.myItem | async)?.info" row="4" col="1" class="text p-b-10"></Label>
-
-            </GridLayout>
-
-            <GridLayout row="1" col="0">
-                <zd-dechet-content [dechetContent]="(dechetStore.myItem | async)?.content"></zd-dechet-content>
-            </GridLayout>
-
-            <GridLayout row="2" col="0">
-                <ListView class="list-group" [items]="solutionStore.items | async">
-                    <ng-template let-solution="item" let-i="index">
-                        <StackLayout orientation="vertical" class="list-group-item">
-                            <Label [text]="solution.nom"></Label>
-                            <Label [text]="solution.type"></Label>
-                            <Label [text]="solution.dateDeCreation"></Label>
-                        </StackLayout>
-                    </ng-template>
-                </ListView>
-            </GridLayout>
-
+        <GridLayout rows="*" columns="*" *tabItem="{title: 'Info'}">
+            <zd-dechet-content row="0" col="0" [dechetObj]="dechetStore.myItem | async"></zd-dechet-content>
         </GridLayout>
-        <StackLayout *tabItem="{title: 'Zéro déchets'}">
-            <StackLayout>
-                <Button text="Change Tab via ngModel" (tap)="changeTab()"
-                        class="btn btn-primary btn-active"></Button>
-            </StackLayout>
-        </StackLayout>
-        <StackLayout *tabItem="{title: 'Recyclage'}">
-            <StackLayout>
-                <Button text="Change Tab via ngModel" (tap)="changeTab()"
-                        class="btn btn-primary btn-active"></Button>
-            </StackLayout>
-        </StackLayout>
+        <GridLayout rows="*" columns="*" *tabItem="{title: 'Zéro déchets'}">
+            <zd-zero-dechet row="0" col="0"
+                            [zeroDechetSolutionList]="solutionStore.items | async | solutionFilter:'zeroDechet'"></zd-zero-dechet>
+        </GridLayout>
+        <GridLayout rows="*" columns="*" *tabItem="{title: 'Recyclage'}">
+            <zd-recyclage row="0" col="0"
+                          [recyclageSolutionList]="solutionStore.items | async | solutionFilter:'recyclage'"></zd-recyclage>
+        </GridLayout>
+        <GridLayout rows="*" columns="*" *tabItem="{title: 'Revalorisation'}">
+            <zd-revalorisation-upcycling-tuto row="0" col="0"
+                                              [revalorisationUpcyclingTutoSolutionList]="solutionStore.items | async | solutionFilter:'revalorisation_UpcyclingTuto'"></zd-revalorisation-upcycling-tuto>
+        </GridLayout>
     </TabView>
 </GridLayout>

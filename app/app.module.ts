@@ -26,6 +26,7 @@ import { HomeModule } from "./home/home.module";
 import { BrowseModule } from "./browse/browse.module";
 import { SearchModule } from "./search/search.module";
 import { DechetModule } from "./dechet/dechet.module";
+import { SolutionModule } from "./solution/solution.module";
 import { SettingsModule } from "./settings/settings.module";
 
 setStatusBarColors();
@@ -48,12 +49,13 @@ setStatusBarColors();
         BrowseModule,
         SearchModule,
         DechetModule,
+        SolutionModule,
         SettingsModule,
         NativeScriptUISideDrawerModule,
         NativeScriptUIListViewModule
     ],
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     bootstrap: [AppComponent],
     schemas: [NO_ERRORS_SCHEMA]

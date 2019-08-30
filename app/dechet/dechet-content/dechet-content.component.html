@@ -1,5 +1,30 @@
-<GridLayout row="*, *">
-    <ListView class="list-group" [items]="dechetContent?.materiaux">
+<GridLayout rows="*, *">
+    <GridLayout row="0" rows="*,*,*,*,*" columns="*, *">
+
+        <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="0"></Label>
+        <Label row="0" col="1" class="text p-b-10">
+            <FormattedString>
+                <Span [text]="dechetObj?._id"></Span>
+            </FormattedString>
+        </Label>
+
+        <Label text="Date de création" class="p-l-15 p-b-10 m-r-20 text-secondary" row="1"></Label>
+        <Label [text]="dechetObj?.dateDeCreation" row="1" col="1"
+               class="text p-b-10"></Label>
+
+        <Label text="valideParAdmin" class="p-l-15 p-b-10 m-r-20 text-secondary" row="2"></Label>
+        <Label [text]="dechetObj?.valideParAdmin" row="2" col="1"
+               class="text p-b-10"></Label>
+
+        <Label text="auteur" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
+        <Label [text]="dechetObj?.auteur" row="3" col="1"
+               class="text p-b-10"></Label>
+
+        <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="4"></Label>
+        <Label [text]="dechetObj?.info" row="4" col="1" class="text p-b-10"></Label>
+
+    </GridLayout>
+    <ListView row="1" class="list-group" [items]="dechetObj.content?.materiaux">
         <ng-template let-materiau="item" let-i="index">
             <StackLayout orientation="vertical" class="list-group-item">
                 <Label *ngIf="materiau.nom"

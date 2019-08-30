@@ -1,0 +1,11 @@
+<GridLayout rows="*, *">
+    <ListView class="list-group" [items]="recyclageSolutionList">
+        <ng-template let-solution="item" let-i="index">
+            <StackLayout orientation="vertical" class="list-group-item">
+                <Label [text]="solution.nom"></Label>
+                <Label [text]="solution.type"></Label>
+                <Label [text]="solution.dateDeCreation"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

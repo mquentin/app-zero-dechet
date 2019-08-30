@@ -8,7 +8,7 @@ import { Component, Input } from "@angular/core";
 })
 export class DechetContentComponent {
 
-    @Input() dechetContent: any;
+    @Input() dechetObj: any;
 
     constructor() {
 
