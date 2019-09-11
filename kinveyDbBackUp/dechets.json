@@ -18,7 +18,7 @@
           "transport": "1% de la production mondiale de coton est européenne, le reste est importé.",
           "deforestation": "",
           "pollutionChimique": "On utilise du chlore et d’autres produits chimiques pour blanchir le coton.",
-          "recyclage1": ""
+          "recyclage": ""
         },
         {
           "nom": "Papier",
@@ -30,7 +30,7 @@
           "transport": "",
           "deforestation": "Contribution à la déforestation.",
           "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature (blanchiment).",
-          "recyclage1": ""
+          "recyclage": ""
         }
       ]
     }
@@ -54,7 +54,7 @@
           "transport": "",
           "deforestation": "",
           "pollutionChimique": "Oui",
-          "recyclage1": "Recycler du plastique, c’est long, coûteux et énergivore."
+          "recyclage": "Recycler du plastique, c’est long, coûteux et énergivore."
         },
         {
           "nom": "Carton",
@@ -66,7 +66,7 @@
           "transport": "",
           "deforestation": "Contribution à la déforestation.",
           "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature.",
-          "recyclage1": "L’emballage est recyclable à 100%."
+          "recyclage": "L’emballage est recyclable à 100%."
         }
       ]
     }
@@ -90,7 +90,7 @@
           "transport": "",
           "deforestation": "",
           "pollutionChimique": "Oui",
-          "recyclage1": "Recycler du plastique, c’est long, coûteux et énergivore."
+          "recyclage": "Recycler du plastique, c’est long, coûteux et énergivore."
         },
         {
           "nom": "Carton",
@@ -102,7 +102,7 @@
           "transport": "",
           "deforestation": "Contribution à la déforestation.",
           "pollutionChimique": "Emploi et rejet de substances toxiques dans la nature.",
-          "recyclage1": "L’emballage est recyclable à 100%."
+          "recyclage": "L’emballage est recyclable à 100%."
         }
       ]
     }
