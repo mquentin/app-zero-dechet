@@ -35,15 +35,17 @@
                        [text]="'Pesticides: ' + materiau.Pesticides"></Label>
                 <Label *ngIf="materiau.energieElectrique"
                        [text]="'energieElectrique: ' + materiau.energieElectrique"></Label>
-                <Label *ngIf="materiau.energiesFossiles"
-                       [text]="'energiesFossiles: ' + materiau.energiesFossiles"></Label>
+                <Label *ngIf="materiau.energiesFossilesComposition"
+                       [text]="'energiesFossilesComposition: ' + materiau.energiesFossilesComposition"></Label>
+                <Label *ngIf="materiau.energiesFossilesFabrication"
+                       [text]="'energiesFossilesFabrication: ' + materiau.energiesFossilesFabrication"></Label>
                 <Label *ngIf="materiau.transport"
                        [text]="'transport: ' + materiau.transport"></Label>
                 <Label *ngIf="materiau.deforestation"
                        [text]="'deforestation: ' + materiau.deforestation"></Label>
                 <Label *ngIf="materiau.pollutionChimique"
                        [text]="'pollutionChimique: ' + materiau.pollutionChimique"></Label>
-                <Label *ngIf="materiau.recyclage" [text]="'recyclage: ' + materiau.recyclage"></Label>
+                <Label *ngIf="materiau.recyclable" [text]="'recyclable: ' + materiau.recyclable"></Label>
             </StackLayout>
         </ng-template>
     </ListView>

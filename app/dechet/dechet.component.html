@@ -28,7 +28,7 @@
             <zd-zero-dechet row="0" col="0"
                             [zeroDechetSolutionList]="solutionStore.items | async | solutionFilter:'zeroDechet'"></zd-zero-dechet>
         </GridLayout>
-        <GridLayout rows="*" columns="*" *tabItem="{title: 'Recyclage'}">
+        <GridLayout rows="*" columns="*" *tabItem="{title: 'recyclable'}">
             <zd-recyclage row="0" col="0"
                           [recyclageSolutionList]="solutionStore.items | async | solutionFilter:'recyclage'"></zd-recyclage>
         </GridLayout>
