@@ -1,52 +1,35 @@
-<GridLayout rows="*, *">
-    <GridLayout row="0" rows="*,*,*,*,*" columns="*, *">
-
-        <Label text="id" class="p-l-15 p-b-10 m-r-20 text-secondary" row="0"></Label>
-        <Label row="0" col="1" class="text p-b-10">
+<StackLayout>
+    <GridLayout row="0" col="0" rows="auto" columns="auto">
+        <Label row="1" col="0" class="text dechetObjInfo" textWrap="true" width="100%">
             <FormattedString>
-                <Span [text]="dechetObj?._id"></Span>
+                <Span [text]="dechetObj?.info"></Span>
             </FormattedString>
         </Label>
-
-        <Label text="Date de création" class="p-l-15 p-b-10 m-r-20 text-secondary" row="1"></Label>
-        <Label [text]="dechetObj?.dateDeCreation" row="1" col="1"
-               class="text p-b-10"></Label>
-
-        <Label text="valideParAdmin" class="p-l-15 p-b-10 m-r-20 text-secondary" row="2"></Label>
-        <Label [text]="dechetObj?.valideParAdmin" row="2" col="1"
-               class="text p-b-10"></Label>
-
-        <Label text="auteur" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
-        <Label [text]="dechetObj?.auteur" row="3" col="1"
-               class="text p-b-10"></Label>
-
-        <Label text="astuce" class="p-l-15 p-b-10 m-r-20 text-secondary" row="4"></Label>
-        <Label [text]="dechetObj?.info" row="4" col="1" class="text p-b-10"></Label>
-
     </GridLayout>
-    <ListView row="1" class="list-group" [items]="dechetObj.content?.materiaux">
+    <ListView row="1" col="0" class="list-group" [items]="dechetObj.content?.materiaux">
         <ng-template let-materiau="item" let-i="index">
             <StackLayout orientation="vertical" class="list-group-item">
-                <Label *ngIf="materiau.nom"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.nom"
                        [text]="materiau.nom"></Label>
-                <Label *ngIf="materiau.info"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.info"
                        [text]="'info: ' + materiau.info"></Label>
-                <Label *ngIf="materiau.Pesticides"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.Pesticides"
                        [text]="'Pesticides: ' + materiau.Pesticides"></Label>
-                <Label *ngIf="materiau.energieElectrique"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energieElectrique"
                        [text]="'energieElectrique: ' + materiau.energieElectrique"></Label>
-                <Label *ngIf="materiau.energiesFossilesComposition"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energiesFossilesComposition"
                        [text]="'energiesFossilesComposition: ' + materiau.energiesFossilesComposition"></Label>
-                <Label *ngIf="materiau.energiesFossilesFabrication"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energiesFossilesFabrication"
                        [text]="'energiesFossilesFabrication: ' + materiau.energiesFossilesFabrication"></Label>
-                <Label *ngIf="materiau.transport"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.transport"
                        [text]="'transport: ' + materiau.transport"></Label>
-                <Label *ngIf="materiau.deforestation"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.deforestation"
                        [text]="'deforestation: ' + materiau.deforestation"></Label>
-                <Label *ngIf="materiau.pollutionChimique"
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.pollutionChimique"
                        [text]="'pollutionChimique: ' + materiau.pollutionChimique"></Label>
-                <Label *ngIf="materiau.recyclable" [text]="'recyclable: ' + materiau.recyclable"></Label>
+                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.recyclable"
+                       [text]="'recyclable: ' + materiau.recyclable"></Label>
             </StackLayout>
         </ng-template>
     </ListView>
-</GridLayout>
+</StackLayout>
