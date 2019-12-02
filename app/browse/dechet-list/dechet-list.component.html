@@ -1,5 +1,5 @@
-<ScrollView class="page">
-    <ListView class="list-group"
+<GridLayout columns="*" class="page">
+    <ListView col="0" class="list-group"
               [row]="row"
               [class.visible]="listLoaded"
               [items]="dechetStore.items | async"
@@ -42,4 +42,4 @@
             </StackLayout>
         </ng-template>
     </ListView>
-</ScrollView>
+</GridLayout>
