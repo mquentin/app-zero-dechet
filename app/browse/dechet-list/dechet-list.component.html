@@ -19,13 +19,13 @@
 
                     <Image row="2" [src]="'res://logo_login'" stretch="aspectFill" height="120" class="m-r-20"></Image>
                     <StackLayout row="2" col="1" verticalAlignment="center" class="list-group-item-text">
-                        <Label class="p-b-10">
+                        <Label class="p-b-10" textWrap="true">
                             <FormattedString ios:fontFamily="system">
                                 <Span text="&#xf1b9;   " class="fa text-primary"></Span>
                                 <Span [text]="item.info"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10">
+                        <Label class="p-b-10" textWrap="true">
                             <FormattedString ios:fontFamily="system">
                                 <Span text="&#xf085;   " class="fa text-primary"></Span>
                                 <Span [text]="item.content"></Span>

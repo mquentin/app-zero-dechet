@@ -22,87 +22,63 @@
 
                     <Image row="2" [src]="'res://logo_login'" stretch="aspectFill" width="50" height="50" class="m-r-20"></Image>
                     <StackLayout row="2" col="1" verticalAlignment="center" class="list-group-item-text">
-                        <Label class="p-b-10" *ngIf="materiau.info">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.info">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf1b9;   " class="fa text-primary"></Span>
+                                <Span text="&#xf0a1;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.info"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.Pesticides">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.Pesticides">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf188;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.Pesticides"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.energieElectrique">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.energieElectrique">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf0e7;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.energieElectrique"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.energiesFossilesComposition">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.energiesFossilesComposition">
                             <FormattedString ios:fontFamily="system">
                                 <Span text="&#xf085;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.energiesFossilesComposition"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.energiesFossilesFabrication">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.energiesFossilesFabrication">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf46a;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.energiesFossilesFabrication"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.transport">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.transport">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf46a;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.transport"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.deforestation">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.deforestation">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf785;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.deforestation"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.pollutionChimique">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.pollutionChimique">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf780;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.pollutionChimique"></Span>
                             </FormattedString>
                         </Label>
-                        <Label class="p-b-10" *ngIf="materiau.recyclable">
+                        <Label class="p-b-10" textWrap="true" *ngIf="materiau.recyclable">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf085;   " class="fa text-primary"></Span>
+                                <Span text="&#xf058;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.recyclable"></Span>
                             </FormattedString>
                         </Label>
                     </StackLayout>
                 </GridLayout>
             </StackLayout>
-
-
-            <!--<StackLayout orientation="vertical" class="list-group-item">
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.nom"
-                       [text]="materiau.nom"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.info"
-                       [text]="'info: ' + materiau.info"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.Pesticides"
-                       [text]="'Pesticides: ' + materiau.Pesticides"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energieElectrique"
-                       [text]="'energieElectrique: ' + materiau.energieElectrique"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energiesFossilesComposition"
-                       [text]="'energiesFossilesComposition: ' + materiau.energiesFossilesComposition"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.energiesFossilesFabrication"
-                       [text]="'energiesFossilesFabrication: ' + materiau.energiesFossilesFabrication"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.transport"
-                       [text]="'transport: ' + materiau.transport"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.deforestation"
-                       [text]="'deforestation: ' + materiau.deforestation"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.pollutionChimique"
-                       [text]="'pollutionChimique: ' + materiau.pollutionChimique"></Label>
-                <Label class="text" textWrap="true" width="100%" *ngIf="materiau.recyclable"
-                       [text]="'recyclable: ' + materiau.recyclable"></Label>
-            </StackLayout>-->
         </ng-template>
     </ListView>
 </GridLayout>
