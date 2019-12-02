@@ -10,7 +10,7 @@ export class SolutionsService {
     items: BehaviorSubject<Array<Solution>> = new BehaviorSubject<Array<Solution>>([]);
 
     private allItems: Array<Solution> = [];
-    private solutionStore = Kinvey.DataStore.collection("solutions");
+    private solutionStore = Kinvey.DataStore.collection("solutions", Kinvey.DataStoreType.Sync);
 
     constructor(private zone: NgZone, private http: HttpClient) {
     }

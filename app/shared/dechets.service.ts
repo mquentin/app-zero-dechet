@@ -12,7 +12,7 @@ export class DechetsService {
 
     private allItems: Array<Dechet> = [];
     private oneItem: Dechet;
-    private dechetStore = Kinvey.DataStore.collection("dechets");
+    private dechetStore = Kinvey.DataStore.collection("dechets", Kinvey.DataStoreType.Sync);
 
     constructor(private zone: NgZone, private http: HttpClient) {
     }
