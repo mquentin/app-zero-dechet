@@ -46,7 +46,7 @@ export class DechetListComponent {
         let cell = args.ios;
         if (cell) {
             // support XCode 8
-            cell.backgroundColor = utils.ios.getter(UIColor, UIColor.clearColor);
+            // cell.backgroundColor = utils.ios.getter(UIColor, UIColor.clearColor);
         }
     }
 

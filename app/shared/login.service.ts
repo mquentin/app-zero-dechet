@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Kinvey } from "kinvey-nativescript-sdk";
+import * as Kinvey from "kinvey-nativescript-sdk";
 import { User } from "./user.model";
 
 @Injectable()

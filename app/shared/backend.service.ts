@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpHeaders } from "@angular/common/http";
-import { Kinvey } from "kinvey-nativescript-sdk";
+import * as Kinvey from "kinvey-nativescript-sdk";
 
 @Injectable()
 export class BackendService {

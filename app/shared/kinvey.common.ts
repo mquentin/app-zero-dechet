@@ -1,4 +1,4 @@
-import { Kinvey } from "kinvey-nativescript-sdk";
+import * as Kinvey from "kinvey-nativescript-sdk";
 
 import { Config } from "./config";
 

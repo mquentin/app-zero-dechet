@@ -2,7 +2,7 @@ import { Injectable, NgZone } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, BehaviorSubject } from "rxjs";
 
-import { Kinvey } from "kinvey-nativescript-sdk";
+import * as Kinvey from "kinvey-nativescript-sdk";
 import { Solution } from "./solution.model";
 
 @Injectable()
@@ -10,7 +10,7 @@ export class SolutionsService {
     items: BehaviorSubject<Array<Solution>> = new BehaviorSubject<Array<Solution>>([]);
 
     private allItems: Array<Solution> = [];
-    private solutionStore = Kinvey.DataStore.collection<Solution>("solutions");
+    private solutionStore = Kinvey.DataStore.collection("solutions");
 
     constructor(private zone: NgZone, private http: HttpClient) {
     }
