@@ -1,7 +1,7 @@
 <GridLayout rows="auto, *" columns="*">
     <GridLayout row="0" col="0" rows="auto" columns="auto">
-        <Label row="1" col="0" class="text dechetObjInfo" textWrap="true" width="100%">
-            <FormattedString>
+        <Label row="1" col="0" class="p-b-10 text dechetObjInfo" textWrap="true" width="100%">
+            <FormattedString ios:fontFamily="system">
                 <Span [text]="dechetObj?.info"></Span>
             </FormattedString>
         </Label>
@@ -72,7 +72,7 @@
                         </Label>
                         <Label class="p-b-10" textWrap="true" *ngIf="materiau.recyclable">
                             <FormattedString ios:fontFamily="system">
-                                <Span text="&#xf058;   " class="fa text-primary"></Span>
+                                <Span text="&#xf1b8;   " class="fa text-primary"></Span>
                                 <Span [text]="materiau.recyclable"></Span>
                             </FormattedString>
                         </Label>
