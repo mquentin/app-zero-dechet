@@ -15,12 +15,12 @@
     <Label class="action-bar-title" [text]="(dechetStore.myItem | async)?.nom"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content" columns="*" rows="auto, auto">
+<GridLayout class="page page-content" columns="*" rows="auto, *">
     <GridLayout columns="auto, *" class="navigation-layout" (tap)="goBack()" horizontalAlignment="left" row="0" col="0">
         <Label col="0" text="&#xf104;" class="fa"></Label>
         <Label col="1" text="Retour" class="p-r-10"></Label>
     </GridLayout>
-    <TabView [(ngModel)]="tabSelectedIndex" row="1" col="0" height="100%">
+    <TabView [(ngModel)]="tabSelectedIndex" row="1" col="0">
         <GridLayout rows="*" columns="*" *tabItem="{title: 'Info'}">
             <zd-dechet-content row="0" col="0" [dechetObj]="dechetStore.myItem | async"></zd-dechet-content>
         </GridLayout>
